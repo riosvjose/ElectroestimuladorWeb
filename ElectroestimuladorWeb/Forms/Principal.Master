@@ -13,7 +13,7 @@
     <title>Electroestimulador</title>
     <link href="../Styles/bootstrap.min.css" rel="stylesheet" />
     <link href="../Styles/font-awesome.min.css" rel="stylesheet" />
-    <link href="../Styles/ucb_lpz.css" rel="stylesheet" />
+    <link href="../Styles/electro.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

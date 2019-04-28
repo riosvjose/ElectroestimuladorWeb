@@ -18,6 +18,23 @@ namespace ElectroestimuladorWeb
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
+        }
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            //server data
+            Session["DbUser"] = "ignacio";
+            Session["DbPassword"] = "catolica2019";
+            Session["strServer"] = "201.131.41.25";
+            Session["DbPort"] = "3306";
+            Session["DbName"] = "Elec";
+            Session["StrCon"] = "Server = " + Session["strServer"] + "; Port =" + Session["DbPort"] + "; Database =" + Session["DbName"] + "; Uid =" + Session["DbUser"] + "; Pwd =" + Session["DbPassword"] + "; ";
+
+            //User data
+            Session["strUserAccount"] = "";
+            Session["strPassword"] = "";
+            Session["strUserID"] = "";
+            Session["strUser"] = "";
         }
     }
 }

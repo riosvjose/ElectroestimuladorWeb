@@ -10,17 +10,17 @@ namespace ElectroestimuladorWeb.Forms
     public partial class Salir : System.Web.UI.Page
     {
 
-        #region "Librerias Externas"
-
+        #region Libraries
+        GEN_VarSession axVarSes = new GEN_VarSession();
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //axVarSes.Escribe("strUsuario", "");
-            //axVarSes.Escribe("strPassword", "");
-            //axVarSes.Escribe("strConexion", "");
-            //axVarSes.Escribe("UsuarioPersonaNumSec", "");
-            Response.Write(@"<script language='javascript'>window.close();</script>");
+            axVarSes.Escribe("strUser", string.Empty);
+            axVarSes.Escribe("strUserAccount", string.Empty);
+            axVarSes.Escribe("strPassword", string.Empty);
+            axVarSes.Escribe("strUserID", string.Empty);
+            //Response.Write(@"<script language='javascript'>window.close();</script>");
             Response.Redirect("~/Default.aspx");
         }
     }

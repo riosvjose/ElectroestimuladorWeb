@@ -7,12 +7,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="author" content="Centro de Sistemas - UCB" />
-    <link rel="icon" type="image/png" href="Img/faviconUCB.png" />
-    <title>Sistema de almacenes</title>
+    <meta name="author" content="Ignacio Rios" />
+    <link rel="icon" type="image/png" href="Img/escudo.png" />
+    <title>Electroestimulador Web</title>
     <link href="Styles/bootstrap.min.css" rel="stylesheet" />
     <link href="Styles/font-awesome.min.css" rel="stylesheet" />
-    <link href="Styles/ucb_lpz.css" rel="stylesheet" />
+    <link href="Styles/electro.css" rel="stylesheet" />
 </head>
 <body>
     <br/>
@@ -31,7 +31,7 @@
                                 <div class="col-xs-12 text-center">
                                    <%--<h1>Bienvenido</h1>--%>
                                     <div class="text-right">
-                                        <h3><a style="color:#0e0e38;" href="ALM_Salir.aspx">Registrarse</a></h3>
+                                        <h3><a style="color:#0e0e38;" href="#">Registrarse</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -66,9 +66,9 @@
                                                             <label>Usuario</label>
                                                             <div class="input-group">
                                                                 <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                                                                <asp:TextBox ID="tbUsuario" CssClass="form-control" placeholder="Ingrese su usuario ..." runat="server" MaxLength="20" AutoCompleteType="Disabled"></asp:TextBox>
+                                                                <asp:TextBox ID="tbUser" CssClass="form-control" placeholder="Ingrese su usuario ..." runat="server" MaxLength="50" AutoCompleteType="Disabled"></asp:TextBox>
                                                             </div>
-                                                            <asp:RequiredFieldValidator ID="tbUsuario_RequiredFieldValidator" ControlToValidate="tbUsuario" runat="server" ErrorMessage="Debe ingresar su usuario." Text="*" CssClass="text-warning"></asp:RequiredFieldValidator>
+                                                            <asp:RequiredFieldValidator ID="tbUsuario_RequiredFieldValidator" ControlToValidate="tbUser" runat="server" ErrorMessage="Debe ingresar su usuario." Text="*" CssClass="text-warning"></asp:RequiredFieldValidator>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Contraseña</label>

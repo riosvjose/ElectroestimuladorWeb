@@ -79,3 +79,258 @@ D:\Taller de grado\Desarrollo\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\De
 D:\Taller de grado\Desarrollo\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CopyComplete
 D:\Taller de grado\Desarrollo\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.dll
 D:\Taller de grado\Desarrollo\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.pdb
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.dll.config
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.pdb
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csc.exe
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csc.exe.config
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csc.rsp
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csi.exe
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csi.exe.config
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csi.rsp
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.Managed.Core.targets
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.AppContext.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Collections.Immutable.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Console.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.Compression.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.FileSystem.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.Pipes.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Reflection.Metadata.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.AccessControl.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Claims.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Principal.Windows.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.ValueTuple.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Xml.XmlDocument.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Xml.XPath.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\vbc.exe
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\vbc.exe.config
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\vbc.rsp
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\VBCSCompiler.exe
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\VBCSCompiler.exe.config
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Antlr3.Runtime.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\AspNet.ScriptManager.bootstrap.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\AspNet.ScriptManager.jQuery.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\BCrypt.Net-Next.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.ScriptManager.WebForms.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.Web.Infrastructure.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\MySql.Data.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\MySql.Fabric.Plugin.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Newtonsoft.Json.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Diagnostics.DiagnosticSource.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Net.Http.Formatting.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Http.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Http.WebHost.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Optimization.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\WebGrease.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\BCrypt.Net-Next.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Optimization.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Newtonsoft.Json.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Antlr3.Runtime.pdb
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Net.Http.Formatting.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Http.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Http.WebHost.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Diagnostics.DiagnosticSource.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csprojAssemblyReference.cache
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CoreCompileInputs.cache
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CopyComplete
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.dll
+E:\IRV\Taller de grado\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.pdb
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csprojAssemblyReference.cache
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CoreCompileInputs.cache
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.pdb
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.dll.config
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.pdb
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csc.exe
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csc.exe.config
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csc.rsp
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csi.exe
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csi.exe.config
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\csi.rsp
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.Managed.Core.targets
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.AppContext.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Collections.Immutable.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Console.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.Compression.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.FileSystem.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.Pipes.AccessControl.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.IO.Pipes.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Reflection.Metadata.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.AccessControl.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Claims.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Security.Principal.Windows.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.ValueTuple.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Xml.XmlDocument.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Xml.XPath.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\vbc.exe
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\vbc.exe.config
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\vbc.rsp
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\VBCSCompiler.exe
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\roslyn\VBCSCompiler.exe.config
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Antlr3.Runtime.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\AspNet.ScriptManager.bootstrap.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\AspNet.ScriptManager.jQuery.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\BCrypt.Net-Next.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.FriendlyUrls.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.ScriptManager.MSAjax.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.ScriptManager.WebForms.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\MySql.Data.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\MySql.Fabric.Plugin.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Newtonsoft.Json.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Diagnostics.DiagnosticSource.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Net.Http.Formatting.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Http.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Http.WebHost.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Optimization.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\WebGrease.dll
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\BCrypt.Net-Next.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Optimization.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Newtonsoft.Json.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Antlr3.Runtime.pdb
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.FriendlyUrls.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Net.Http.Formatting.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Http.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Web.Http.WebHost.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\System.Diagnostics.DiagnosticSource.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\ElectroestimuladorWeb-master\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CopyComplete
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.dll.config
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\ElectroestimuladorWeb.pdb
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\csc.exe
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\csc.exe.config
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\csc.rsp
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\csi.exe
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\csi.exe.config
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\csi.rsp
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.AppContext.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Collections.Immutable.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Console.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.IO.Compression.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.IO.FileSystem.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.IO.Pipes.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Reflection.Metadata.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Security.AccessControl.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Security.Claims.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.ValueTuple.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Xml.XPath.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\vbc.exe
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\vbc.exe.config
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\vbc.rsp
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\VBCSCompiler.exe
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\roslyn\VBCSCompiler.exe.config
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Antlr3.Runtime.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\AspNet.ScriptManager.jQuery.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\BCrypt.Net-Next.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\MySql.Data.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\MySql.Fabric.Plugin.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Newtonsoft.Json.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Net.Http.Formatting.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Web.Http.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Web.Http.WebHost.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Web.Optimization.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\WebGrease.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\BCrypt.Net-Next.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Web.Optimization.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Newtonsoft.Json.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Antlr3.Runtime.pdb
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Net.Http.Formatting.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Web.Http.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Web.Http.WebHost.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csprojAssemblyReference.cache
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CoreCompileInputs.cache
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CopyComplete
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.dll
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.pdb
