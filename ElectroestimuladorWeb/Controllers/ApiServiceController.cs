@@ -15,14 +15,14 @@ namespace ElectroestimuladorWeb
     [RoutePrefix("api/ApiService")]
     public class ApiServiceController : ApiController
     {
-        #region Variables locales 
+        #region Variables 
         private string strSql = string.Empty;
         GEN_VarSession axVarSes = new GEN_VarSession();
         private string strCon = "Server=201.131.41.25; Port=3306; Database=Elec; Uid=ucbtest; Pwd=Catolica.2019;";
         #endregion
 
-        #region Librerias Externas
-        Funciones Funciones = new Funciones();
+        #region Libraries
+        Functions Funciones = new Functions();
         #endregion
 
         [HttpPost]
@@ -32,7 +32,22 @@ namespace ElectroestimuladorWeb
             DB_Users USER = new DB_Users();
             USER.StrCon = strCon;
             DataTable dt2 = USER.login(ias.usr, ias.pwd);
-            return dt2;
+            DataTable dt = new DataTable();
+            if (dt2.Rows.Count < 1)
+            {
+                dt = dt2;
+            }
+            else
+            {
+                dt.Clear();
+                dt.Columns.Add("error");
+                dt.Columns.Add("mensaje");
+                DataRow row = dt.NewRow();
+                row["error"] = "1";
+                row["mensaje"] = USER.Message;
+                dt.Rows.Add(row);
+            }
+            return dt;
         }
 
         [HttpPost]

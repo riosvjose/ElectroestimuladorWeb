@@ -144,6 +144,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Forms\ListBody.aspx" />
+    <Content Include="Forms\SearchUsers.aspx" />
     <Content Include="Forms\Index.aspx" />
     <Content Include="Forms\Salir.aspx" />
     <Content Include="Global.asax" />
@@ -240,6 +242,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ListBody.aspx.cs">
+      <DependentUpon>ListBody.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ListBody.aspx.designer.cs">
+      <DependentUpon>ListBody.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchUsers.aspx.cs">
+      <DependentUpon>SearchUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchUsers.aspx.designer.cs">
+      <DependentUpon>SearchUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -261,7 +277,7 @@
     <Compile Include="Forms\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
-    <Compile Include="Funciones\Funciones.cs" />
+    <Compile Include="Funciones\Functions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

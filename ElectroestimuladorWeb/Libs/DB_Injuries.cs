@@ -13,8 +13,7 @@ namespace ElectroestimuladorWeb
     public class DB_Injuries
     {
         #region Libs
-        GEN_VarSession axSesVar = new GEN_VarSession();
-        Funciones Funciones = new Funciones();
+
         #endregion
 
         #region Variables
@@ -112,17 +111,9 @@ namespace ElectroestimuladorWeb
         public bool Modify()
         {
             bool blOperacionCorrecta = false;
-            return blOperacionCorrecta;
-        }
-        public bool Delete()
-        {
-            bool blOperacionCorrecta = false;
-            return blOperacionCorrecta;
-        }
-        public DataTable SeeByUser(string Uid)
-        {
             DataTable dt = new DataTable();
-            strSql = "SELECT * from users_treatments where user_id="+Uid;
+            strSql = "update injuries" +
+                " set na";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -136,23 +127,41 @@ namespace ElectroestimuladorWeb
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
                 da.Fill(ds);
-                return ds;
             }
             catch (Exception e)
             {
-                string error = "1";
-                string mensaje = "Database ERROR. " + e.ToString();
-                DataTable dt2 = new DataTable();
-                dt2.Clear();
-                dt2.Columns.Add("error");
-                dt2.Columns.Add("mensaje");
-                DataRow row = dt2.NewRow();
-                row["error"] = error;
-                row["mensaje"] = mensaje;
-                dt2.Rows.Add(row);
-                return dt2;
+                _message = "Database ERROR. " + e.ToString();
             }
-           
+            return blOperacionCorrecta;
+        }
+        public bool Delete()
+        {
+            bool blOperacionCorrecta = false;
+            return blOperacionCorrecta;
+        }
+        public DataTable dtListAll()
+        {
+            DataTable dt = new DataTable();
+            strSql = "SELECT * from injuries order by name";
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                _message = "Database ERROR. " + e.ToString();
+            }
+            return ds;
         }
         
         #endregion

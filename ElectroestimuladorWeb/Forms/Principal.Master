@@ -38,85 +38,9 @@
                     </li>
                     <li>
                         <a id="sbLesiones" runat="server" href="Lesiones.aspx"><i class="fa fa-industry fa-fw" ></i>Lesiones</a>
-                    </li>
-                    
+                    </li>                   
                     <li>
-                        <a id="sbRegIngreso" runat="server"  href="ALM_RegistrarIngreso.aspx" visible="false" ><i class="fa fa-truck" ></i> Registrar ingreso</a>
-                    </li>
-                    <li>
-                        <a id="sbPedidos" runat="server" class="" role="link" data-toggle="collapse" href="#collapsePedidos" aria-expanded="false" aria-controls="collapsePedidos" visible="false" >
-                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Pedidos
-                        </a>
-                        <div class="collapse" id="collapsePedidos">
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnRealizarPedido" runat="server" CausesValidation="false" OnClick="lnkbtnRealizarPedido_Click" Visible="false" >Realizar pedido</asp:LinkButton>
-                                </li>
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnAutorizarPedido" runat="server" CausesValidation="false" OnClick="lnkbtnAutorizarPedido_Click" Visible="false" >Autorizar pedido</asp:LinkButton>
-                                </li>
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnEntregarPedido" runat="server" CausesValidation="false" OnClick="lnkbtnEntregarPedido_Click" Visible="false" >Entregar pedido</asp:LinkButton>
-                                </li>
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnGenerarToken" runat="server" CausesValidation="false" OnClick="lnkbtnGenerarToken_Click" Visible="false" >Generar token</asp:LinkButton>
-                                </li>
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnBuscarItem" runat="server" CausesValidation="false" OnClick="lnkbtnBuscarItem_Click" Visible="false" >Buscar pedidos</asp:LinkButton>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a id="sbSalidas" runat="server" class="" role="link" data-toggle="collapse" href="#collapseSalidas" aria-expanded="false" aria-controls="collapseSalidas" visible="false" >
-                            <i class="fa fa-sign-out" aria-hidden="true"></i> Salidas
-                        </a>
-                        <div class="collapse" id="collapseSalidas">
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnRegistarSalida" runat="server" CausesValidation="false" OnClick="lnkbtnRegistarSalida_Click" Visible="false" >Registrar salida</asp:LinkButton>
-                                </li>
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnAutorizarSalida" runat="server" CausesValidation="false" OnClick="lnkbtnAutorizarSalida_Click" Visible="false" >Autorizar salida</asp:LinkButton>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a id="sbAdminMedidas" runat="server" href="ALM_MED_AdministrarMedidas.aspx" visible="false" ><i class="fa fa-balance-scale" ></i> Medidas</a>
-                    </li>
-                    <li>
-                        <a id="sbAdminProveedores" runat="server" href="ALM_PROV_AdministrarProveedores.aspx" visible="false" ><i class="fa fa-handshake-o" ></i> Proveedores</a>
-                    </li>
-                    <li>
-                        <a id="sbAdminGrupos" runat="server" href="ALM_GRU_AdministrarGrupos.aspx" visible="false" ><i class="fa fa-object-group" ></i> Grupos</a>
-                    </li>
-                    <li>
-                        <a id="sbAdminCategorias" runat="server" href="ALM_CAT_AdministrarCategorias.aspx" visible="false" ><i class="fa fa-crop" ></i> Categorías</a>
-                    </li>
-                    <li>
-                        <a id="sbAdminItems" runat="server" href="ALM_ITEM_AdministrarItems.aspx" visible="false" ><i class="fa fa-pencil" ></i> Items</a>
-                    </li>
-                    <li>
-                        <a id="sbUsuarios" runat="server" href="ALM_AdministrarUsuarios.aspx" visible="false" ><i class="fa fa-group" ></i>Subdepartamentos personas</a>
-                    </li>
-                    <li>
-                        <a id="sbReportes" runat="server" class="" role="link" data-toggle="collapse" href="#collapseReportes" aria-expanded="false" aria-controls="collapseReportes" visible="false" >
-                            <i class="fa fa-tasks" aria-hidden="true"></i> Reportes
-                        </a>
-                        <div class="collapse" id="collapseReportes">
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnReporte1" runat="server" CausesValidation="false" OnClick="lnkbtnReporte1_Click" Visible="false" >Cantidad de items entregados</asp:LinkButton>
-                                </li>
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnReporte2" runat="server" CausesValidation="false" OnClick="lnkbtnReporte2_Click" Visible="false" >Consumo expresado en dinero</asp:LinkButton>
-                                </li>
-                                <li>
-                                    <asp:LinkButton ID="lnkbtnReporte3" runat="server" CausesValidation="false" OnClick="lnkbtnReporte3_Click" Visible="false" >Existencia de items</asp:LinkButton>
-                                </li>
-                            </ul>
-                        </div>
+                       <a id="A1" runat="server" href="Lesiones.aspx"><i class="fa fa-industry fa-fw" ></i>Lesiones</a>
                     </li>                                                  
                 </ul>
         </nav>

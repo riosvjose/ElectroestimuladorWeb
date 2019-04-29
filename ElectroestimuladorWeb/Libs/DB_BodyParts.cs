@@ -14,7 +14,7 @@ namespace ElectroestimuladorWeb
     {
         #region Libs
         GEN_VarSession axSesVar = new GEN_VarSession();
-        Funciones Funciones = new Funciones();
+        Functions Funciones = new Functions();
         #endregion
 
         #region Variables

@@ -10,96 +10,105 @@
 namespace ElectroestimuladorWeb.Forms {
     
     
-    public partial class Index {
+    public partial class ListBody {
         
         /// <summary>
-        /// pnMensajeError control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnMensajeError;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// lblMensajeError control.
+        /// UpdateProgress1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeError;
+        protected global::System.Web.UI.UpdateProgress UpdateProgress1;
         
         /// <summary>
-        /// pnMensajeOK control.
+        /// pnBodyParts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnMensajeOK;
+        protected global::System.Web.UI.WebControls.Panel pnBodyParts;
         
         /// <summary>
-        /// lblMensajeOK control.
+        /// lblBodyParts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeOK;
+        protected global::System.Web.UI.WebControls.Label lblBodyParts;
         
         /// <summary>
-        /// lbLesiones control.
+        /// gvDatos1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbLesiones;
+        protected global::System.Web.UI.WebControls.GridView gvDatos1;
         
         /// <summary>
-        /// pnLesiones control.
+        /// pnError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnLesiones;
+        protected global::System.Web.UI.WebControls.Panel pnError;
         
         /// <summary>
-        /// imgLesiones control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLesiones;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// lbHistClinica control.
+        /// pnOK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbHistClinica;
+        protected global::System.Web.UI.WebControls.Panel pnOK;
         
         /// <summary>
-        /// pnTareas control.
+        /// lblOK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnTareas;
+        protected global::System.Web.UI.WebControls.Label lblOK;
         
         /// <summary>
-        /// imgHistClinica control.
+        /// pnVacio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgHistClinica;
+        protected global::System.Web.UI.WebControls.Panel pnVacio;
+        
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }

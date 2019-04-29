@@ -8,13 +8,24 @@ using System.Text;
 namespace ElectroestimuladorWeb
 {
     // Funciones para el Servicio Web de la aplicacion
-    public class Funciones
+    public class Functions
     {
         public string EliminarCaracteresEspeciales(string pwd)
         {
             string ax;
             ax = pwd.Replace(" ", "");
             ax = ax.Replace("%", "");
+            ax = ax.Replace("&", "");
+            ax = ax.Replace("'", "");
+            ax = ax.Replace("|", "");
+            ax = ax.Replace("\"", "");
+            return ax;
+        }
+
+        public string EliminarCaracteresEspecSinEsp(string str)
+        {
+            string ax;
+            ax = str.Replace("%", "");
             ax = ax.Replace("&", "");
             ax = ax.Replace("'", "");
             ax = ax.Replace("|", "");

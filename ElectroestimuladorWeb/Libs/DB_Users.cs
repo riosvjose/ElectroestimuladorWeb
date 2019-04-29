@@ -14,7 +14,7 @@ namespace ElectroestimuladorWeb
     {
         #region Libs
         GEN_VarSession axSesVar = new GEN_VarSession();
-        Funciones Funciones = new Funciones();
+        Functions Funciones = new Functions();
         #endregion
 
         #region Variables
@@ -182,24 +182,20 @@ namespace ElectroestimuladorWeb
         public DataTable login(string usr, string pwd)
         {
             DataTable dt = new DataTable();
-            string error = "";
-            string mensaje = "";
             if (usr.Trim().Length == 0)
             {
-                error = "1";
-                mensaje = "El campo Documento de Identidad es obligatorio.";
+                _message = "El campo Documento de Identidad es obligatorio.";
             }
             if (pwd.Trim().Length == 0)
             {
-                error = "1";
-                mensaje = "El campo Contraseña es obligatorio.";
+                _message = "El campo Contraseña es obligatorio.";
             }
 
             usr = Funciones.EliminarCaracteresEspeciales(usr);
             pwd = Funciones.EliminarCaracteresEspeciales(pwd);
             pwd = Funciones.getMd5Hash(pwd);
             strSql = " select u.*, p.passwd from users u, user_passwords p " +
-                     "where u.email='" +usr + "'" +
+                     "where u.user_account='" +usr + "'" +
                      " and u.user_id=p.user_id" +
                      " and p.pwd_status=1" +
                      " and p.passwd='" + pwd + "'";
@@ -216,8 +212,6 @@ namespace ElectroestimuladorWeb
                 reader = commandDatabase.ExecuteReader();
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
-                mensaje = "";
-                error = "0";
                 da.Fill(ds);
                 if (ds.Rows.Count < 1)
                 {
@@ -230,17 +224,40 @@ namespace ElectroestimuladorWeb
             }
             catch (Exception e)
             {
-                error = "1";
                 _message = "Database ERROR. " + e.ToString();
             }
-            /*DataTable dt2 = new DataTable();
-            dt2.Clear();
-            dt2.Columns.Add("error");
-            dt2.Columns.Add("mensaje");
-            DataRow row = dt2.NewRow();
-            row["error"] = error;
-            row["mensaje"] = mensaje;
-            dt2.Rows.Add(row);*/
+            return ds;
+        }
+        public DataTable Search(string paramet)
+        {
+            DataTable dt = new DataTable();
+            paramet = Funciones.EliminarCaracteresEspeciales(paramet);
+            strSql = " select u.* from users u " +
+                     "where (u.email='" + paramet + "'" +
+                     " or u.last_name='" + paramet+"'"+
+                     " or u.first_name='" + paramet + "'" +
+                     " or concat (u.last_name, '', u.first_name) = '" + paramet +"'"+
+                     " or concat (u.first_name, '', u.last_name) = '" + paramet+"')" +
+                     " order by u.last_name, u.first_name";
+
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                _message = "Database ERROR. " + e.ToString();
+            }
             return ds;
         }
         public bool GenerateUserID()

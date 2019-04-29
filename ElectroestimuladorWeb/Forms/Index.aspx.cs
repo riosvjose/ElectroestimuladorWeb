@@ -9,19 +9,16 @@ namespace ElectroestimuladorWeb.Forms
 {
     public partial class Index : System.Web.UI.Page
     {
-        #region "Librerias Externas"
-
-        #endregion
-        #region "Clase de tablas de la Base de Datos"
+        #region Libraries
+        GEN_VarSession axVarSes = new GEN_VarSession();
         
 
         #endregion
-        #region "Funciones y procedimientos"
+        #region Procedures
 
-        private void CargarDatosIniciales(string strCon)
+        private void Load_Ini(string strCon)
         {
-            CargarLblNotificaHoy();
-            CargarLblNotificaPendientes();
+            
         }
         
         protected void Page_Load(object sender, EventArgs e)
@@ -32,47 +29,19 @@ namespace ElectroestimuladorWeb.Forms
             }
             if (!Page.IsPostBack)
             {
-                //CargarDatosIniciales(axVarSes.Lee<string>("strConexion"));
-            }
-        }
-        protected void lbSalidas_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("STRS_SAL_MenuSalidas.aspx");
-        }
-        protected void lbTareas_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("STRS_TAR_MenuTareas.aspx"); 
-        }
-        protected void lbProyectos_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("STRS_PROY_MenuProyectos.aspx");
-        }
-        protected void lbControlAulas_Click(object sender, EventArgs e)
-        {
-            
-        }
-        protected void CargarLblNotificaHoy()
-        {
-            string[] tareas = new string[100];
-            lblNotificaHoy.Text = "";
-            int i = 0;
-            while(tareas[i]!=null)
-            {
-                lblNotificaHoy.Text = lblNotificaHoy.Text + tareas[i] + "<br>";
-                i++;
-            }
-        }
-        protected void CargarLblNotificaPendientes()
-        {
-            lblNotificaPendientes.Text = "";
-            string[] tareasPen = new string[100];
-            int i = 0;
-            while (tareasPen[i] != null)
-            {
-                lblNotificaPendientes.Text = lblNotificaPendientes.Text  + tareasPen[i] + "<br>";
-                i++;
+                Load_Ini(axVarSes.Lee<string>("strCon"));
             }
         }
         #endregion
+
+        protected void lbLesiones_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ListBody.aspx");
+        }
+
+        protected void lbHistClinica_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SearchUsers.aspx");
+        }
     }
 }
