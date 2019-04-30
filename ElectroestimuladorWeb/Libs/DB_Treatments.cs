@@ -76,7 +76,7 @@ namespace ElectroestimuladorWeb
         {
             string msg = string.Empty, error = string.Empty;
             DataTable dt = new DataTable();
-            strSql = "insert into treatments (name, description, updated_at, updated_by) " +
+            strSql = "insert into treatments ( name, description, updated_at, updated_by) " +
                       "values(" + "'" + _name + "', '" + _description + "', sysdate(),"+_updated_by+")";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
@@ -119,10 +119,10 @@ namespace ElectroestimuladorWeb
             bool blOperacionCorrecta = false;
             return blOperacionCorrecta;
         }
-        public DataTable SeeByUser(string Uid)
+        public DataTable SeeAll()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT * from users_treatments where user_id="+Uid;
+            strSql = "SELECT * from treatments order by name";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -154,7 +154,49 @@ namespace ElectroestimuladorWeb
             }
            
         }
-        
+
+        public DataTable SeeDetails(string injurt_id)
+        {
+            DataTable dt = new DataTable();
+            strSql = "select t.name treatment, i.name injury, w.name wave, w.frecuency, w.pulse_time_microsec " +
+                "from treatments t, injuries i, waves w, injury_treatment it, treatments_waves tw " +
+                "where t.treatment_id = it.treatment_id" +
+                " and i.injury_id = it.injury_id " +
+                "and t.treatment_id = tw.treatment_id " +
+                "and w.wave_id = tw.wave_id " +
+                "and i.injury_id = " + injurt_id+
+                " order by t.name";
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception e)
+            {
+                string error = "1";
+                string mensaje = "Database ERROR. " + e.ToString();
+                DataTable dt2 = new DataTable();
+                dt2.Clear();
+                dt2.Columns.Add("error");
+                dt2.Columns.Add("mensaje");
+                DataRow row = dt2.NewRow();
+                row["error"] = error;
+                row["mensaje"] = mensaje;
+                dt2.Rows.Add(row);
+                return dt2;
+            }
+
+        }
         #endregion
     }
 }

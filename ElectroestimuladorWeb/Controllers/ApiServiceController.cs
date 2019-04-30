@@ -18,7 +18,7 @@ namespace ElectroestimuladorWeb
         #region Variables 
         private string strSql = string.Empty;
         GEN_VarSession axVarSes = new GEN_VarSession();
-        private string strCon = "Server=201.131.41.25; Port=3306; Database=Elec; Uid=ucbtest; Pwd=Catolica.2019;";
+        private string strCon = "Server=201.131.41.25; Port=3306; Database=Elec; Uid=ignacio; Pwd=catolica2019;";
         #endregion
 
         #region Libraries
@@ -33,7 +33,7 @@ namespace ElectroestimuladorWeb
             USER.StrCon = strCon;
             DataTable dt2 = USER.login(ias.usr, ias.pwd);
             DataTable dt = new DataTable();
-            if (dt2.Rows.Count < 1)
+            if (dt2.Rows.Count >= 1)
             {
                 dt = dt2;
             }
@@ -51,16 +51,6 @@ namespace ElectroestimuladorWeb
         }
 
         [HttpPost]
-        [Route("FillUserData")]
-        public DataTable IngresarSistema([FromBody]ApiService ias)
-        {
-            DB_Users USER = new DB_Users();
-            USER.StrCon = strCon;
-            USER.UserAccount = ias.usr;
-            DataTable dt2 = USER.See();
-            return dt2;
-        }
-        [HttpPost]
         [Route("userRegistration")]
         public DataTable userRegistration([FromBody]ApiService ias)
         {
@@ -77,6 +67,46 @@ namespace ElectroestimuladorWeb
                 USER.BirthDate = jsonOp["birthdate"].ToString();
             }
             DataTable dt2 = USER.Insert();
+            return dt2;
+        }
+
+        [HttpPost]
+        [Route("ListBody")]
+        public DataTable ListBody([FromBody]ApiService ias)
+        {
+            DB_BodyParts Body = new DB_BodyParts();
+            Body.StrCon = strCon;
+            DataTable dt2 = Body.SeeAll();
+            return dt2;
+        }
+
+        [HttpPost]
+        [Route("ListInjuries")]
+        public DataTable ListInjuries([FromBody]ApiService ias)
+        {
+            DB_Injuries Injuries = new DB_Injuries();
+            Injuries.StrCon = strCon;
+            DataTable dt2 = Injuries.dtListAll();
+            return dt2;
+        }
+
+        [HttpPost]
+        [Route("ListTreatments")]
+        public DataTable ListTreatments([FromBody]ApiService ias)
+        {
+            BD_Treatments Treatment = new BD_Treatments();
+            Treatment.StrCon = strCon;
+            DataTable dt2 = Treatment.SeeAll();
+            return dt2;
+        }
+
+        [HttpPost]
+        [Route("ListTreatmentsDetails")]
+        public DataTable ListTreatmentsDetails([FromBody]ApiService ias)
+        {
+            BD_Treatments Treatment = new BD_Treatments();
+            Treatment.StrCon = strCon;
+            DataTable dt2 = Treatment.SeeDetails(ias.injury_id);
             return dt2;
         }
 

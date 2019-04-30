@@ -27,7 +27,9 @@ namespace ElectroestimuladorWeb
         // Class attributes
         private int _treatment_id = 0;
         private string _name = string.Empty;
-        private string _description = string.Empty;
+        private int _frecuency = 0;
+        private int _pulse_time = 0;
+        private int _kind = 0;
         private string _updated_at = string.Empty;
         private int _updated_by = 0;
 
@@ -39,7 +41,9 @@ namespace ElectroestimuladorWeb
 
         public int TreatmentId { get { return _treatment_id; } set { _treatment_id = value; } }
         public string Name { get { return _name; } set { _name = value; } }
-        public string Description { get { return _description; } set { _description = value; } }
+        public int Frecuency { get { return _frecuency; } set { _frecuency = value; } }
+        public int Kind { get { return _kind; } set { _kind = value; } }
+        public int PulseTime { get { return _pulse_time; } set { _pulse_time = value; } }
         public int UpdatedBy { get { return _updated_by; } set { _updated_by = value; } }
         public string UpdatedAt { get { return _updated_at; } set { _updated_at = value; } }
 
@@ -61,7 +65,9 @@ namespace ElectroestimuladorWeb
         {
             _treatment_id = 0;
             _name = string.Empty;
-            _description = string.Empty;
+            _pulse_time = 0;
+            _kind = 0;
+            _frecuency = 0;
             _updated_at = string.Empty;
             _updated_by = 0;
 
@@ -76,8 +82,8 @@ namespace ElectroestimuladorWeb
         {
             string msg = string.Empty, error = string.Empty;
             DataTable dt = new DataTable();
-            strSql = "insert into treatments (name, description, updated_at, updated_by) " +
-                      "values(" + _name + "', '" + _description + "', sysdate(),"+_updated_by+")";
+            strSql = "insert into waves (name, kind, frecuency, pulse_time_microsec, updated_at, updated_by ) " +
+                      "values(" + _name + "', " + _kind +","+_frecuency+","+_pulse_time+ "', sysdate(),"+_updated_by+")";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -122,7 +128,7 @@ namespace ElectroestimuladorWeb
         public DataTable SeeByUser(string Uid)
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT * from users_treatments where user_id="+Uid;
+            strSql = "SELECT * from waves order by name";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;

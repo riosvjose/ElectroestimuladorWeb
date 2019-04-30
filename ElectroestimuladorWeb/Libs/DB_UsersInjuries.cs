@@ -25,10 +25,10 @@ namespace ElectroestimuladorWeb
 
         #region attributes
         // Class attributes
-        private int _injurie_id = 0;
+        private int _injury_id = 0;
         private int _user_id = 0;
         private int _body_part_id = 0;
-        private string _injurie_date = string.Empty;
+        private string _injury_date = string.Empty;
         private string _updated_at = string.Empty;
         private int _updated_by = 0;
 
@@ -38,10 +38,10 @@ namespace ElectroestimuladorWeb
 
         // getters and setter database attributes
 
-        public int InjurieId { get { return _injurie_id; } set { _injurie_id = value; } }
+        public int InjurieId { get { return _injury_id; } set { _injury_id = value; } }
         public int UserId { get { return _user_id; } set { _user_id = value; } }
         public int BodyPartId { get { return _body_part_id; } set { _body_part_id = value; } }
-        public string InjurieDate { get { return _injurie_date; } set { _injurie_date = value; } }
+        public string InjurieDate { get { return _injury_date; } set { _injury_date = value; } }
         public int UpdatedBy { get { return _updated_by; } set { _updated_by = value; } }
         public string UpdatedAt { get { return _updated_at; } set { _updated_at = value; } }
 
@@ -61,9 +61,10 @@ namespace ElectroestimuladorWeb
         #region Constructor
         public DB_UsersInjuries()
         {
-            _injurie_id = 0;
+            _injury_id = 0;
             _user_id = 0;
             _body_part_id = 0;
+            _injury_date = string.Empty;
             _updated_at = string.Empty;
             _updated_by = 0;
 
@@ -74,12 +75,12 @@ namespace ElectroestimuladorWeb
         #endregion
 
         #region Methods
-        public DataTable Insert()
+        public string Insert()
         {
             string msg = string.Empty, error = string.Empty;
             DataTable dt = new DataTable();
-            strSql = "insert into users_injuries (injury_id, body_part_id, user_id, updated_at, updated_by) " +
-                      "values(" + _injurie_id + ", '" + _body_part_id  + "', '" + _user_id  + "', sysdate(),"+_updated_by+")";
+            strSql = "insert into users_injuries (injury_id, body_part_id, user_id, injurie_date, updated_at, updated_by) " +
+                      "values(" + _injury_id + ", '" + _body_part_id  + "', " + _user_id  + ", sysdate(), sysdate(), " + _updated_by+")";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -92,23 +93,13 @@ namespace ElectroestimuladorWeb
                 reader = commandDatabase.ExecuteReader();
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
-                error = "0";
-                msg = "Registro creado satisfactoriamente.";
+                msg = "";
             }
             catch (Exception e)
             {
-                error = "1";
                 msg = "Database ERROR. " + e.ToString();
             }   
-            DataTable dt2 = new DataTable();
-            dt2.Clear();
-            dt2.Columns.Add("error");
-            dt2.Columns.Add("mensaje");
-            DataRow row = dt2.NewRow();
-            row["error"] = error;
-            row["mensaje"] = msg;
-            dt2.Rows.Add(row);
-            return dt2;
+            return msg;
         }
 
         public bool Modify()

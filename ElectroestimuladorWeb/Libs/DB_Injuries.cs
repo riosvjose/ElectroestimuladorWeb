@@ -113,7 +113,7 @@ namespace ElectroestimuladorWeb
             bool blOperacionCorrecta = false;
             DataTable dt = new DataTable();
             strSql = "update injuries" +
-                " set na";
+                " set ";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;

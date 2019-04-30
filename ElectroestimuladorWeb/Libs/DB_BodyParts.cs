@@ -121,7 +121,7 @@ namespace ElectroestimuladorWeb
         public DataTable SeeAll()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT * from body_parts where body_part_id="+_body_part_id;
+            strSql = "SELECT * from body_parts order by name";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;

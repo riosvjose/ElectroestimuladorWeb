@@ -12,6 +12,11 @@ namespace ElectroestimuladorWeb
         public string pwd { get; set; }
         public string usrName { get; set; }
         public JArray jsonUsuario { get; set; }
+        public string injury_id { get; set; }
+        public string body_part_id { get; set; }
+        public string user_id { get; set; }
+            
+
 
     }
 }

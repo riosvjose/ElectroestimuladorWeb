@@ -202,7 +202,7 @@ namespace ElectroestimuladorWeb
 
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
+            commandDatabase.CommandTimeout = 120;
             MySqlDataReader reader;
             MySqlDataAdapter da;
             DataTable ds = new DataTable();
