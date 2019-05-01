@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using MySql.Data.MySqlClient;
 
 namespace ElectroestimuladorWeb
 {
@@ -89,49 +84,31 @@ namespace ElectroestimuladorWeb
         #endregion
 
         #region Methods
-        public DataTable Insert()
+        public bool Insert()
         {
-            string msg = string.Empty, error = string.Empty;
-            if (GenerateUserID())
+            bool blDone = false;
+            DataTable dt = new DataTable();
+            strSql = "insert into users(user_account, first_name, last_name, email, phone, birthdate, active, kind, updated_at, updated_by) " +
+                     "values( '" + _user_account + "', '" + _first_name + "', '" + _last_name + "', '" + _email + "', '" + _phone + "', " + "STR_TO_DATE('" + _birthdate + "','%d/%m/%Y')" + ", " + _status + ", " + _kind + ", sysdate(), 0)";
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
             {
-                DataTable dt = new DataTable();
-                strSql = "insert into users(user_account, first_name, last_name, email, phone, birthdate, active, kind, updated_at, updated_by) " +
-                         "values(" + _user_id + ", '" + _user_account + "', '" + _first_name + "', '" + _last_name + "', '" + _email + "', '" + _phone + "', sysdate(), 1, 1, sysdate(), 0)";
-                MySqlConnection databaseConnection = new MySqlConnection(StrCon);
-                MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
-                commandDatabase.CommandTimeout = 60;
-                MySqlDataReader reader;
-                MySqlDataAdapter da;
-                DataTable ds = new DataTable();
-                try
-                {
-                    databaseConnection.Open();
-                    reader = commandDatabase.ExecuteReader();
-                    da = new MySqlDataAdapter(commandDatabase);
-                    databaseConnection.Close();
-                    error = "0";
-                    msg = "Usuario creado satisfactoriamente.";
-                }
-                catch (Exception e)
-                {
-                    error = "1";
-                    msg = "Database ERROR. " + e.ToString();
-                }    
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                blDone = true;
             }
-            else
+            catch (Exception e)
             {
-                error = "1";
-                msg = "Database ERROR. " + _message;
+                _message = "Database ERROR. " + e.ToString();
             }
-            DataTable dt2 = new DataTable();
-            dt2.Clear();
-            dt2.Columns.Add("error");
-            dt2.Columns.Add("mensaje");
-            DataRow row = dt2.NewRow();
-            row["error"] = error;
-            row["mensaje"] = msg;
-            dt2.Rows.Add(row);
-            return dt2;
+            return blDone;
         }
 
         public bool Modify()
@@ -139,10 +116,28 @@ namespace ElectroestimuladorWeb
             bool blOperacionCorrecta = false;
             return blOperacionCorrecta;
         }
-        public bool Delete()
+        public void Delete()
         {
-            bool blOperacionCorrecta = false;
-            return blOperacionCorrecta;
+            DataTable dt = new DataTable();
+            strSql = "delete from users where user_id=" + _user_id;
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                _message = "Database ERROR. " + e.ToString();
+            }
         }
         public DataTable See()
         {
@@ -288,6 +283,31 @@ namespace ElectroestimuladorWeb
                 blDone = true;
             }
             return blDone;
+        }
+
+        public DataTable SearchIfExist()
+        {
+            DataTable dt = new DataTable();
+            strSql = "select * from users where user_account ='" + _user_account+"'";
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                _message = "Database ERROR. " + e.ToString();
+            }
+            return ds;
         }
         #endregion
     }

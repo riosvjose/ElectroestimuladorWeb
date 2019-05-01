@@ -8,7 +8,7 @@ using System.Data;
 
 namespace ElectroestimuladorWeb.Forms
 {
-    public partial class ListBody : System.Web.UI.Page
+    public partial class ListTreatments : System.Web.UI.Page
     {
         #region "Libraries"
         GEN_VarSession axVarSes = new GEN_VarSession();

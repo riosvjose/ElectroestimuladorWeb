@@ -329,8 +329,8 @@ D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Sys
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\System.Diagnostics.DiagnosticSource.xml
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csprojAssemblyReference.cache
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CoreCompileInputs.cache
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CopyComplete
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.dll
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.pdb
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csprojAssemblyReference.cache

@@ -49,22 +49,22 @@ namespace ElectroestimuladorWeb.Forms {
         protected global::System.Web.UI.WebControls.Label lblMensajeOK;
         
         /// <summary>
-        /// lbLesiones control.
+        /// lbBodyParts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbLesiones;
+        protected global::System.Web.UI.WebControls.LinkButton lbBodyParts;
         
         /// <summary>
-        /// pnLesiones control.
+        /// pnBodyParts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnLesiones;
+        protected global::System.Web.UI.WebControls.Panel pnBodyParts;
         
         /// <summary>
         /// imgLesiones control.
@@ -85,13 +85,13 @@ namespace ElectroestimuladorWeb.Forms {
         protected global::System.Web.UI.WebControls.LinkButton lbHistClinica;
         
         /// <summary>
-        /// pnTareas control.
+        /// pnHistClinica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnTareas;
+        protected global::System.Web.UI.WebControls.Panel pnHistClinica;
         
         /// <summary>
         /// imgHistClinica control.

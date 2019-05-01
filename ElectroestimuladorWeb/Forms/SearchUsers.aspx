@@ -24,13 +24,13 @@
                 </asp:UpdateProgress>
             </div>
             <br />
-            <%--panel Principal de Items--%>
+            <%--panel Principal--%>
             <asp:Panel ID="pnPrincipal" runat="server">
 		        <div class="panel panel-info">
-                    <%--ENCABEZADO DEL PANEL--%>
+                    <%--PANEL HEADING--%>
 			        <div class="panel-heading">                        
 			        </div>
-                    <%--CUERPO DEL PANEL--%>
+                    <%--PANEL BODY--%>
 			        <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
@@ -41,7 +41,7 @@
                        </div>
                                            
 			        </div>
-                    <%--PIE DEL PANEL--%>
+                    <%--PANEL footer--%>
 			        <div class="panel-footer">
                         <div class="btn-toolbar" role="toolbar">
                             <div class="btn-group">
@@ -54,11 +54,11 @@
              <%--panel finded users--%>
             <asp:Panel ID="pnFindedUsers" runat="server" Visible="false">
 		        <div class="panel panel-info">
-                    <%--ENCABEZADO DEL PANEL--%>
+                    <%--PANEL Heading--%>
 			        <div class="panel-heading">
                         <h3> <strong><asp:Label ID="lbltitleFindedUsers" runat="server" Text="Coincidencias"></asp:Label></strong></h3>
 			        </div>
-                    <%--CUERPO DEL PANEL--%>
+                    <%--PANEL body--%>
 			        <div class="panel-body">
                          <br />
                          <div class="row">
@@ -88,10 +88,10 @@
                             </div>
                         </div>
                     </div>
-                    <%--PIE DEL PANEL--%>
+                    <%--PANEL footer--%>
 		        </div>
             </asp:Panel>    
-            <%--Mensajes de exito y error--%>
+            <%--success an error messages panel--%>
             <div class="row">
 	            <div class="col-md-6">
 	                <asp:Panel ID="pnError" runat="server" Visible="false">
@@ -106,7 +106,7 @@
 	                </asp:Panel>
                     <asp:Panel ID="pnVacio" runat="server" Visible="false">
 	                </asp:Panel>
-                    <%--Mensaje de Error AJAXValidator--%>
+                    <%--error message AJAXValidator--%>
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="False" ShowSummary="True" CssClass="alert alert-danger" />
 	            </div>
             </div>  

@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 namespace ElectroestimuladorWeb
 {
     // Description: Class refered to database table user_passwords
-    public class BD_UserPasswords
+    public class DB_UserPasswords
     {
         #region Librerias Externas
         GEN_VarSession axSesVar = new GEN_VarSession();
@@ -57,7 +57,7 @@ namespace ElectroestimuladorWeb
         #endregion
 
         #region Constructor
-        public BD_UserPasswords()
+        public DB_UserPasswords()
         {
             _user_id= 0;
             _password = string.Empty;
@@ -71,9 +71,9 @@ namespace ElectroestimuladorWeb
         #endregion
 
         #region Methods
-        public DataTable Insert()
+        public bool Insert()
         {
-            string msg = string.Empty, error = string.Empty;
+            bool blDone = false;
             DataTable dt = new DataTable();
             strSql = "insert into user_passwords(user_id, passwd, pwd_status, updated_at, updated_by) " +
                      "values(" + _user_id + ", '" + _password + "', " + "1" + "," +" sysdate(), "+_user_id+")";
@@ -89,23 +89,13 @@ namespace ElectroestimuladorWeb
                 reader = commandDatabase.ExecuteReader();
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
-                error = "0";
-                msg = "Contraseña actualizada satisfactoriamente. ";
+                blDone = true;
             }
             catch (Exception e)
             {
-                error = "1";
-                msg = "Database ERROR. " + e.ToString();
+                _message = "Database ERROR. " + e.ToString();
             }
-            DataTable dt2 = new DataTable();
-            dt2.Clear();
-            dt2.Columns.Add("error");
-            dt2.Columns.Add("mensaje");
-            DataRow row = dt2.NewRow();
-            row["error"] = error;
-            row["mensaje"] = msg;
-            dt2.Rows.Add(row);
-            return dt2;
+            return blDone;
         }
 
         public bool UnableOldPassword()

@@ -66,7 +66,23 @@ namespace ElectroestimuladorWeb
                 USER.Email = jsonOp["email"].ToString();
                 USER.BirthDate = jsonOp["birthdate"].ToString();
             }
-            DataTable dt2 = USER.Insert();
+            DataTable dt2 = new DataTable();
+            dt2.Clear();
+            dt2.Columns.Add("error");
+            dt2.Columns.Add("mensaje");
+            DataRow row = dt2.NewRow();
+            dt2.Rows.Add(row);
+            return dt2;
+            if (USER.Insert())
+            {
+                row["error"] = "0";
+                row["mensaje"] = "Registro exitoso.";
+            }
+            else
+            {
+                row["error"] = "1";
+                row["mensaje"] = USER.Message;
+            }
             return dt2;
         }
 

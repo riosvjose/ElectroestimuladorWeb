@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Principal.Master" AutoEventWireup="true"  CodeBehind="ListBody.aspx.cs" Inherits="ElectroestimuladorWeb.Forms.ListBody" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Principal.Master" AutoEventWireup="true"  CodeBehind="ListTreatments.aspx.cs" Inherits="ElectroestimuladorWeb.Forms.ListTreatments" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -6,7 +6,7 @@
         <ContentTemplate>
             <div class="row">
 	            <div class="col-xs-12">
-		            <h1>Administrar partes del cuerpo</h1>
+		            <h1>Administrar tratamientos</h1>
 	            </div>
             </div>            
             <div class="row">
@@ -29,7 +29,7 @@
 		        <div class="panel panel-info">
                     <%--PANEL HEADING--%>
 			        <div class="panel-heading">
-                        <h3> <strong><asp:Label ID="lblBodyParts" runat="server" Text="Partes del cuerpo"></asp:Label></strong></h3>
+                        <h3> <strong><asp:Label ID="lblBodyTreatments" runat="server" Text="Partes del cuerpo"></asp:Label></strong></h3>
 			        </div>
                     <%--PANEL BODY--%>
 			        <div class="panel-body">

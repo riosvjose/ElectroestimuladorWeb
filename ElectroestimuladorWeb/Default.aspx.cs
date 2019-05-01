@@ -52,9 +52,9 @@ namespace ElectroestimuladorWeb
             {
                 DataRow dr = dt.Rows[0];
                 axVarSes.Escribe("strUser", dr["first_name"] +" "+ dr["last_name"]);
-                axVarSes.Escribe("strUserAccount", dr["user_account"]);
-                axVarSes.Escribe("strPassword", dr["passwd"]);
-                axVarSes.Escribe("strUserID", dr["user_id"]);
+                axVarSes.Escribe("strUserAccount", dr["user_account"].ToString());
+                axVarSes.Escribe("strPassword", dr["passwd"].ToString());
+                axVarSes.Escribe("strUserID", dr["user_id"].ToString());
                 Response.Redirect("~/Forms/Index.aspx");
             }
             else

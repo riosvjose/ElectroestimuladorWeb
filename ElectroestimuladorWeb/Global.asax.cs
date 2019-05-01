@@ -35,6 +35,10 @@ namespace ElectroestimuladorWeb
             Session["strPassword"] = "";
             Session["strUserID"] = "";
             Session["strUser"] = "";
+
+            //Procedures data
+            Session["strBodyPartId"] = "";
+            Session["strImageId"] = "";
         }
     }
 }
