@@ -255,35 +255,6 @@ namespace ElectroestimuladorWeb
             }
             return ds;
         }
-        public bool GenerateUserID()
-        {
-            bool blDone = false;
-            DataTable dt = new DataTable();
-            strSql = "SELECT max(user_id) from users where 1";
-            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
-            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
-            MySqlDataReader reader;
-            MySqlDataAdapter da;
-            DataTable ds = new DataTable();
-            try
-            {
-                databaseConnection.Open();
-                reader = commandDatabase.ExecuteReader();
-                da = new MySqlDataAdapter(commandDatabase);
-                databaseConnection.Close();
-                da.Fill(ds);
-                _user_id=Convert.ToInt32(ds.Rows[0][0].ToString());
-                blDone = true;
-            }
-            catch (Exception e)
-            {
-                string msg = "Database ERROR. " + e.ToString();
-                _message = msg;
-                blDone = true;
-            }
-            return blDone;
-        }
 
         public DataTable SearchIfExist()
         {

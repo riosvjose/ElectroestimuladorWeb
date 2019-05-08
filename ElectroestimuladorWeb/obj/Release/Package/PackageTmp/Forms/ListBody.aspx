@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Principal.Master" AutoEventWireup="true" CodeBehind="ListBody.aspx.cs" Inherits="ElectroestimuladorWeb.Forms.ListBody" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Principal.Master" AutoEventWireup="true"  CodeBehind="ListBody.aspx.cs" Inherits="ElectroestimuladorWeb.Forms.ListBody" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -27,11 +27,11 @@
              <%--panel finded users--%>
             <asp:Panel ID="pnBodyParts" runat="server" Visible="true">
 		        <div class="panel panel-info">
-                    <%--ENCABEZADO DEL PANEL--%>
+                    <%--PANEL HEADING--%>
 			        <div class="panel-heading">
                         <h3> <strong><asp:Label ID="lblBodyParts" runat="server" Text="Partes del cuerpo"></asp:Label></strong></h3>
 			        </div>
-                    <%--CUERPO DEL PANEL--%>
+                    <%--PANEL BODY--%>
 			        <div class="panel-body">
                          <br />
                          <div class="row">
@@ -44,8 +44,11 @@
                                                         <Columns>
                                                             <asp:BoundField DataField="body_part_id" HeaderText="ID"  />
                                                             <asp:BoundField DataField="name" HeaderText="Nombre" />
-                                                            <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="ver" Text="Ver" >
-                                                                 <ControlStyle CssClass="btn btn    -sm btn-primary "/>
+                                                             <asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
+                                                                 <ControlStyle CssClass="btn btn-sm btn-warning "/>
+                                                            </asp:ButtonField>
+                                                            <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="delete" Text="Ver" >
+                                                                 <ControlStyle CssClass="btn btn-sm btn-danger "/>
                                                             </asp:ButtonField>--%>
                                                         </Columns>
                                                         <PagerStyle CssClass="GridPager" Wrap="True" />
@@ -59,10 +62,65 @@
                             </div>
                         </div>
                     </div>
-                    <%--PIE DEL PANEL--%>
+                    <%--PANEL FOOTER--%>
+                     <div class="panel-footer">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group">
+                                <asp:Button ID="btnCreateNew" runat="server" CssClass="btn btn-primary" Text="Nuevo" CausesValidation="True" OnClick="btnCreateNew_Click"/>
+                            </div>
+                          </div>
+                        </div>
 		        </div>
             </asp:Panel>    
-            <%--Mensajes de exito y error--%>
+
+            <%--panel modify--%>
+            <asp:Panel ID="pnmodify" runat="server" Visible="false">
+		        <div class="panel panel-info">
+                    <%--PANEL HEADING--%>
+			        <div class="panel-heading">                        
+			        </div>
+                    <%--PANEL BODY--%>
+			        <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                 <strong><asp:Label ID="lblName" runat="server" Text="Nombre: "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbName" CssClass="text-danger" ErrorMessage="El campo 'Nombre' es obligatorio.">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                         <div class="row mb-3">
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                 <asp:TextBox ID="tbName" runat="server" CssClass="form-control" MaxLength="60" AutoCompleteType="Disabled"></asp:TextBox>
+                            </div>
+                            </div>
+                         <div class="row mb-3">
+                            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                                 <strong><asp:Label ID="lblURL" runat="server" Text="URL imagen: "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbUrl" CssClass="text-danger" ErrorMessage="El campo 'URL imagen' es obligatorio.">*</asp:RequiredFieldValidator>
+                                 <asp:TextBox ID="tbUrl" runat="server" CssClass="form-control" MaxLength="100" AutoCompleteType="Disabled"></asp:TextBox>
+                              </div>
+                            </div>
+                         <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                <strong><asp:Label ID="lblTitle" runat="server" Text="Titulo de imagen: "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbTitle" CssClass="text-danger" ErrorMessage="El campo 'Titulo de imagen' es obligatorio.">*</asp:RequiredFieldValidator>
+                                 <asp:TextBox ID="tbTitle" runat="server" CssClass="form-control" MaxLength="60" AutoCompleteType="Disabled"></asp:TextBox>
+                            </div>
+                       </div>
+                                           
+			        </div>
+                    <%--PANEL FOOTER--%>
+			        <div class="panel-footer">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group">
+                                <asp:Button ID="btnSave" runat="server" CssClass="btn btn-primary" Text="Guardar" CausesValidation="True" OnClick="btnSave_Click" Visible="false"/>
+                                <asp:Button ID="btncreate" runat="server" CssClass="btn btn-primary" Text="Crear" CausesValidation="True" OnClick="btncreate_Click" Visible="false"/>
+                                <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-warning" Text="Cancelar" CausesValidation="false" OnClick="btnCancel_Click"/>
+                            </div>
+                          </div>
+                        </div>
+			        </div>
+            </asp:Panel>
+            <%--SUCCESS AND ERROR MESSAGES PANEL--%>
             <div class="row">
 	            <div class="col-md-6">
 	                <asp:Panel ID="pnError" runat="server" Visible="false">
@@ -77,7 +135,7 @@
 	                </asp:Panel>
                     <asp:Panel ID="pnVacio" runat="server" Visible="false">
 	                </asp:Panel>
-                    <%--Mensaje de Error AJAXValidator--%>
+                    <%--ERROR MESSAGE AJAXValidator--%>
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="False" ShowSummary="True" CssClass="alert alert-danger" />
 	            </div>
             </div>  

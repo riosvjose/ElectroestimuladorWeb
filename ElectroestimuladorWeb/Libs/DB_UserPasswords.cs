@@ -98,7 +98,7 @@ namespace ElectroestimuladorWeb
             return blDone;
         }
 
-        public bool UnableOldPassword()
+        public bool DisableOldPassword()
         {
             bool blOperacionCorrecta = false;
             DataTable dt = new DataTable();
@@ -131,7 +131,7 @@ namespace ElectroestimuladorWeb
         public DataTable PasswordUpdate()
         {
             string msg = string.Empty, error = string.Empty;
-            if (UnableOldPassword())
+            if (DisableOldPassword())
             {
                 DataTable dt = new DataTable();
                 strSql = "insert into user_passwords(user_id, password, pwd_status, updated_at, updated_by) " +

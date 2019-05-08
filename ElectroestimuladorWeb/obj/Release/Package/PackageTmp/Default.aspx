@@ -31,7 +31,7 @@
                                 <div class="col-xs-12 text-center">
                                    <%--<h1>Bienvenido</h1>--%>
                                     <div class="text-right">
-                                        <h3><a style="color:#0e0e38;" href="#">Registrarse</a></h3>
+                                        <h3><a style="color:#0e0e38;" href="../Forms/RegisterForm.aspx">Registrarse</a></h3>
                                     </div>
                                 </div>
                             </div>

@@ -25,7 +25,7 @@ namespace ElectroestimuladorWeb
         Functions Funciones = new Functions();
         #endregion
 
-        [HttpPost]
+        [HttpGet]
         [Route("SignIn")]
         public DataTable SignIn([FromBody]ApiService ias)
         {

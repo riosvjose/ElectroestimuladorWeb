@@ -32,14 +32,14 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="text-center">
 
-                <asp:LinkButton ID="lbLesiones" runat="server" OnClick="lbLesiones_Click">
-                    <asp:Panel ID="pnLesiones" runat="server" CssClass="panel-dashboard" role="button" style="margin:0; padding:0;">
+                <asp:LinkButton ID="lbBodyParts" runat="server" OnClick="lbLesiones_Click">
+                    <asp:Panel ID="pnBodyParts" runat="server" CssClass="panel-dashboard" role="button" style="margin:0; padding:0;">
                         <div class="hidden-xs">
                             <div class="ASR5DCB-v-l ASR5DCB-v-n">
                                     <asp:Image ID="imgLesiones" CssClass="ASR5DCB-d-Vc" ImageUrl="~/Img/Vendaje.png" Width="70px" Height="70px" runat="server" />
                             </div>
                         </div>
-                        <div class="gwt-Label ASR5DCB-v-q ASR5DCB-v-s quantumMediumText">Lesiones</div>
+                        <div class="gwt-Label ASR5DCB-v-q ASR5DCB-v-s quantumMediumText">Partes del cuerpo</div>
                        <%-- <div class="gwt-Label ASR5DCB-v-d quantumFadedDescriptionText ASR5DCB-v-e" style="width:200px;">Registre su salida y retorno.</div>--%>
                     </asp:Panel>
                 </asp:LinkButton>
@@ -53,7 +53,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="text-center">
                 <asp:LinkButton ID="lbHistClinica" runat="server" OnClick="lbHistClinica_Click">
-                    <asp:Panel ID="pnTareas" runat="server" CssClass="panel-dashboard" role="button" style="margin:0; padding:0;">
+                    <asp:Panel ID="pnHistClinica" runat="server" CssClass="panel-dashboard" role="button" style="margin:0; padding:0;">
                         <div class="hidden-xs">
                             <div class="ASR5DCB-v-l ASR5DCB-v-n">
                                 <asp:Image ID="imgHistClinica" CssClass="ASR5DCB-d-Vc" ImageUrl="~/Img/carpeta_paciente.png" Width="70px" Height="70px" runat="server" />
