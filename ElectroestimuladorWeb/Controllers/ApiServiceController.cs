@@ -9,6 +9,8 @@ using System.Data;
 
 using Newtonsoft.Json.Linq;
 using MySql.Data.MySqlClient;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace ElectroestimuladorWeb
 {
@@ -16,7 +18,7 @@ namespace ElectroestimuladorWeb
     public class ApiServiceController : ApiController
     {
         #region Variables 
-        private string strSql = string.Empty;
+        private string strSql = string.Empty, token = ">", tokenAsign = ":";
         GEN_VarSession axVarSes = new GEN_VarSession();
         private string strCon = "Server=201.131.41.25; Port=3306; Database=Elec; Uid=ignacio; Pwd=catolica2019;";
         #endregion
@@ -25,17 +27,54 @@ namespace ElectroestimuladorWeb
         Functions Funciones = new Functions();
         #endregion
 
-        [HttpGet]
-        [Route("SignIn")]
-        public DataTable SignIn([FromBody]ApiService ias)
+        [HttpPost]
+        [Route("Prueba")]
+        public string Prueba([FromBody]ApiService ias)
         {
             DB_Users USER = new DB_Users();
             USER.StrCon = strCon;
             DataTable dt2 = USER.login(ias.usr, ias.pwd);
             DataTable dt = new DataTable();
-            if (dt2.Rows.Count >= 1)
+            JObject obj = new JObject();
+            DB_Users user = new DB_Users();
+            string error = "0";
+            string msg = string.Empty, aux = string.Empty, resp = string.Empty;
+            if (dt2.Rows.Count > 0)
             {
                 dt = dt2;
+                DataRow dr = dt.Rows[0];
+                for(int i = 0; i < dt.Columns.Count; i++)
+                {
+                    aux += dt.Columns[i].ColumnName+tokenAsign+ dr[i].ToString()+token;
+                }
+            }
+            else
+            {
+                error= "1";
+                msg = USER.Message;
+            }
+            resp = ";Error"+tokenAsign+error + token +"Message"+tokenAsign+ msg + token + aux;
+            return resp;
+        }
+
+        [HttpPost]
+        [Route("SignIn")]
+        public JObject SignIn([FromBody]ApiService ias)
+        {
+            DB_Users USER = new DB_Users();
+            USER.StrCon = strCon;
+            DataTable dt2 = USER.login(ias.usr, ias.pwd);
+            DataTable dt = new DataTable();
+            JObject obj = new JObject();
+            DB_Users user = new DB_Users();
+
+            if (dt2.Rows.Count >0)
+            {
+                dt = dt2;
+                DataRow dr2 = dt2.Rows[0];
+               
+                //user.FirstName = dr["first_name"].ToString();
+                //user.LastName = dr["last_name"].ToString();                
             }
             else
             {
@@ -47,7 +86,24 @@ namespace ElectroestimuladorWeb
                 row["mensaje"] = USER.Message;
                 dt.Rows.Add(row);
             }
-            return dt;
+            // List<DB_Users> UserList = new List<DB_Users> { new DB_Users {UserId=Convert.ToInt32(dt.Rows[0]["user_id"].ToString()), FirstName= dt.Rows[0]["first_name"].ToString() } };
+
+
+            //JavaScriptSerializer serializer = new JavaScriptSerializer();
+            //return serializer.Serialize(UserList);
+            //obj = JObject.Parse(UserList);
+            JArray array = new JArray();
+            //array= JsonConvert.SerializeObject(dt, Newtonsoft.Json.Formatting.Indented);
+            string JSONString = string.Empty;
+            JSONString = JsonConvert.SerializeObject(dt);
+            DataRow dr = dt.Rows[0];
+            for(int i=0; i < dt.Columns.Count; i++)
+            {
+                array.Add(dr[i].ToString());
+            }
+            JObject Jobj = new JObject();
+            Jobj["usuario"] = JSONString;
+            return Jobj;
         }
 
         [HttpPost]
