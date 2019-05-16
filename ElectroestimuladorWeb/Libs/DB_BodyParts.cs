@@ -139,7 +139,7 @@ namespace ElectroestimuladorWeb
         public DataTable SeeAll()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT * from body_parts order by name";
+            strSql = "SELECT b.*, i.image_url from body_parts b, images i where b.image_id=i.image_id order by name";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;

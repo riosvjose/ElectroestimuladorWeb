@@ -28,8 +28,8 @@ namespace ElectroestimuladorWeb
         #endregion
 
         [HttpPost]
-        [Route("Prueba")]
-        public string Prueba([FromBody]ApiService ias)
+        [Route("SignIn")]
+        public string SignIn([FromBody]ApiService ias)
         {
             DB_Users USER = new DB_Users();
             USER.StrCon = strCon;
@@ -57,54 +57,51 @@ namespace ElectroestimuladorWeb
             return resp;
         }
 
-        [HttpPost]
-        [Route("SignIn")]
-        public JObject SignIn([FromBody]ApiService ias)
-        {
-            DB_Users USER = new DB_Users();
-            USER.StrCon = strCon;
-            DataTable dt2 = USER.login(ias.usr, ias.pwd);
-            DataTable dt = new DataTable();
-            JObject obj = new JObject();
-            DB_Users user = new DB_Users();
+        //[HttpPost]
+        //[Route("SignIn")]
+        //public JObject SignIn([FromBody]ApiService ias)
+        //{
+        //    DB_Users USER = new DB_Users();
+        //    USER.StrCon = strCon;
+        //    DataTable dt2 = USER.login(ias.usr, ias.pwd);
+        //    DataTable dt = new DataTable();
+        //    JObject obj = new JObject();
+        //    DB_Users user = new DB_Users();
 
-            if (dt2.Rows.Count >0)
-            {
-                dt = dt2;
-                DataRow dr2 = dt2.Rows[0];
-               
-                //user.FirstName = dr["first_name"].ToString();
-                //user.LastName = dr["last_name"].ToString();                
-            }
-            else
-            {
-                dt.Clear();
-                dt.Columns.Add("error");
-                dt.Columns.Add("mensaje");
-                DataRow row = dt.NewRow();
-                row["error"] = "1";
-                row["mensaje"] = USER.Message;
-                dt.Rows.Add(row);
-            }
-            // List<DB_Users> UserList = new List<DB_Users> { new DB_Users {UserId=Convert.ToInt32(dt.Rows[0]["user_id"].ToString()), FirstName= dt.Rows[0]["first_name"].ToString() } };
+        //    if (dt2.Rows.Count >0)
+        //    {
+        //        dt = dt2;
+        //        DataRow dr2 = dt2.Rows[0];        
+        //    }
+        //    else
+        //    {
+        //        dt.Clear();
+        //        dt.Columns.Add("error");
+        //        dt.Columns.Add("mensaje");
+        //        DataRow row = dt.NewRow();
+        //        row["error"] = "1";
+        //        row["mensaje"] = USER.Message;
+        //        dt.Rows.Add(row);
+        //    }
+        //    // List<DB_Users> UserList = new List<DB_Users> { new DB_Users {UserId=Convert.ToInt32(dt.Rows[0]["user_id"].ToString()), FirstName= dt.Rows[0]["first_name"].ToString() } };
 
 
-            //JavaScriptSerializer serializer = new JavaScriptSerializer();
-            //return serializer.Serialize(UserList);
-            //obj = JObject.Parse(UserList);
-            JArray array = new JArray();
-            //array= JsonConvert.SerializeObject(dt, Newtonsoft.Json.Formatting.Indented);
-            string JSONString = string.Empty;
-            JSONString = JsonConvert.SerializeObject(dt);
-            DataRow dr = dt.Rows[0];
-            for(int i=0; i < dt.Columns.Count; i++)
-            {
-                array.Add(dr[i].ToString());
-            }
-            JObject Jobj = new JObject();
-            Jobj["usuario"] = JSONString;
-            return Jobj;
-        }
+        //    //JavaScriptSerializer serializer = new JavaScriptSerializer();
+        //    //return serializer.Serialize(UserList);
+        //    //obj = JObject.Parse(UserList);
+        //    JArray array = new JArray();
+        //    //array= JsonConvert.SerializeObject(dt, Newtonsoft.Json.Formatting.Indented);
+        //    string JSONString = string.Empty;
+        //    JSONString = JsonConvert.SerializeObject(dt);
+        //    DataRow dr = dt.Rows[0];
+        //    for(int i=0; i < dt.Columns.Count; i++)
+        //    {
+        //        array.Add(dr[i].ToString());
+        //    }
+        //    JObject Jobj = new JObject();
+        //    Jobj["usuario"] = JSONString;
+        //    return Jobj;
+        //}
 
         [HttpPost]
         [Route("userRegistration")]
@@ -144,12 +141,22 @@ namespace ElectroestimuladorWeb
 
         [HttpPost]
         [Route("ListBody")]
-        public DataTable ListBody([FromBody]ApiService ias)
+        public string ListBody([FromBody]ApiService ias)
         {
+            string resp = ";";
             DB_BodyParts Body = new DB_BodyParts();
             Body.StrCon = strCon;
             DataTable dt2 = Body.SeeAll();
-            return dt2;
+            for (int j = 0; j < dt2.Rows.Count;j++)
+            {
+                for (int i = 0; i < dt2.Columns.Count; i++)
+                {
+                    resp += dt2.Rows[j][i];
+                    resp += "*";
+                }
+                resp += ";";
+            }
+            return resp;
         }
 
         [HttpPost]
