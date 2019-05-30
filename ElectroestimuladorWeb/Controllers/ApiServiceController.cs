@@ -43,65 +43,48 @@ namespace ElectroestimuladorWeb
             {
                 dt = dt2;
                 DataRow dr = dt.Rows[0];
-                for(int i = 0; i < dt.Columns.Count; i++)
+                for (int i = 0; i < dt.Columns.Count; i++)
                 {
-                    aux += dt.Columns[i].ColumnName+tokenAsign+ dr[i].ToString()+token;
+                    aux += dt.Columns[i].ColumnName + tokenAsign + dr[i].ToString() + token;
                 }
             }
             else
             {
-                error= "1";
+                error = "1";
                 msg = USER.Message;
             }
-            resp = ";Error"+tokenAsign+error + token +"Message"+tokenAsign+ msg + token + aux;
+            resp = ";Error" + tokenAsign + error + token + "Message" + tokenAsign + msg + token + aux;
             return resp;
         }
 
-        //[HttpPost]
-        //[Route("SignIn")]
-        //public JObject SignIn([FromBody]ApiService ias)
-        //{
-        //    DB_Users USER = new DB_Users();
-        //    USER.StrCon = strCon;
-        //    DataTable dt2 = USER.login(ias.usr, ias.pwd);
-        //    DataTable dt = new DataTable();
-        //    JObject obj = new JObject();
-        //    DB_Users user = new DB_Users();
+         [HttpPost]
+         [Route("SignIn2")]
+         public DataTable SignIn2([FromBody]ApiService ias)
+         {
+             DB_Users USER = new DB_Users();
+             USER.StrCon = strCon;
+             DataTable dt2 = USER.login(ias.usr, ias.pwd);
+             DataTable dt = new DataTable();
+             JObject obj = new JObject();
+             DB_Users user = new DB_Users();
 
-        //    if (dt2.Rows.Count >0)
-        //    {
-        //        dt = dt2;
-        //        DataRow dr2 = dt2.Rows[0];        
-        //    }
-        //    else
-        //    {
-        //        dt.Clear();
-        //        dt.Columns.Add("error");
-        //        dt.Columns.Add("mensaje");
-        //        DataRow row = dt.NewRow();
-        //        row["error"] = "1";
-        //        row["mensaje"] = USER.Message;
-        //        dt.Rows.Add(row);
-        //    }
-        //    // List<DB_Users> UserList = new List<DB_Users> { new DB_Users {UserId=Convert.ToInt32(dt.Rows[0]["user_id"].ToString()), FirstName= dt.Rows[0]["first_name"].ToString() } };
-
-
-        //    //JavaScriptSerializer serializer = new JavaScriptSerializer();
-        //    //return serializer.Serialize(UserList);
-        //    //obj = JObject.Parse(UserList);
-        //    JArray array = new JArray();
-        //    //array= JsonConvert.SerializeObject(dt, Newtonsoft.Json.Formatting.Indented);
-        //    string JSONString = string.Empty;
-        //    JSONString = JsonConvert.SerializeObject(dt);
-        //    DataRow dr = dt.Rows[0];
-        //    for(int i=0; i < dt.Columns.Count; i++)
-        //    {
-        //        array.Add(dr[i].ToString());
-        //    }
-        //    JObject Jobj = new JObject();
-        //    Jobj["usuario"] = JSONString;
-        //    return Jobj;
-        //}
+             if (dt2.Rows.Count > 0)
+             {
+                 dt = dt2;
+                 DataRow dr2 = dt2.Rows[0];
+             }
+             else
+             {
+                 dt.Clear();
+                 dt.Columns.Add("error");
+                 dt.Columns.Add("mensaje");
+                 DataRow row = dt.NewRow();
+                 row["error"] = "1";
+                 row["mensaje"] = USER.Message;
+                 dt.Rows.Add(row);
+             }
+             return dt2;
+         }
 
         [HttpPost]
         [Route("userRegistration")]
@@ -126,37 +109,16 @@ namespace ElectroestimuladorWeb
             DataRow row = dt2.NewRow();
             dt2.Rows.Add(row);
             return dt2;
-            if (USER.Insert())
-            {
-                row["error"] = "0";
-                row["mensaje"] = "Registro exitoso.";
-            }
-            else
-            {
-                row["error"] = "1";
-                row["mensaje"] = USER.Message;
-            }
-            return dt2;
         }
 
         [HttpPost]
         [Route("ListBody")]
-        public string ListBody([FromBody]ApiService ias)
+        public DataTable ListBody([FromBody]ApiService ias)
         {
-            string resp = ";";
             DB_BodyParts Body = new DB_BodyParts();
             Body.StrCon = strCon;
             DataTable dt2 = Body.SeeAll();
-            for (int j = 0; j < dt2.Rows.Count;j++)
-            {
-                for (int i = 0; i < dt2.Columns.Count; i++)
-                {
-                    resp += dt2.Rows[j][i];
-                    resp += "*";
-                }
-                resp += ";";
-            }
-            return resp;
+            return dt2;
         }
 
         [HttpPost]
@@ -170,16 +132,6 @@ namespace ElectroestimuladorWeb
         }
 
         [HttpPost]
-        [Route("ListTreatments")]
-        public DataTable ListTreatments([FromBody]ApiService ias)
-        {
-            BD_Treatments Treatment = new BD_Treatments();
-            Treatment.StrCon = strCon;
-            DataTable dt2 = Treatment.SeeAll();
-            return dt2;
-        }
-
-        [HttpPost]
         [Route("ListTreatmentsDetails")]
         public DataTable ListTreatmentsDetails([FromBody]ApiService ias)
         {
@@ -187,6 +139,32 @@ namespace ElectroestimuladorWeb
             Treatment.StrCon = strCon;
             DataTable dt2 = Treatment.SeeDetails(ias.injury_id);
             return dt2;
+        }
+
+        [HttpPost]
+        [Route("ListBodyPartDetails")]
+        public DataTable ListBodyPartDetails([FromBody]ApiService ias)
+        {
+            DB_BodyParts BodyPart = new DB_BodyParts();
+            BodyPart.StrCon = strCon;
+            BodyPart.BodyPartId = Convert.ToInt32(ias.body_part_id);
+            DataTable dt2 = BodyPart.SeeBodyImage();
+            return dt2;
+        }
+
+        [HttpPost]
+        [Route("SaveUserTreatment")]
+        public string SaveUserTreatment([FromBody]ApiService ias)
+        {
+            BD_UsersTreatments UserTreatment = new BD_UsersTreatments();
+            UserTreatment.StrCon = strCon;
+            UserTreatment.Intensity = Convert.ToInt32(ias.intensity);
+            UserTreatment.WaveId = Convert.ToInt32(ias.wave_id);
+            UserTreatment.TreatmentId = Convert.ToInt32(ias.treatment_id);
+            UserTreatment.UserId = Convert.ToInt32(ias.user_id);
+            UserTreatment.InjuryId = Convert.ToInt32(ias.injury_id);
+            UserTreatment.BodyPartId = Convert.ToInt32(ias.body_part_id);
+            return UserTreatment.Insert();
         }
 
     }

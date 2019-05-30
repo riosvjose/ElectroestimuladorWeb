@@ -333,3 +333,4 @@ D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Deb
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csproj.CopyComplete
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.dll
 D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.pdb
+D:\Taller de grado\Programas\ElectroestimuladorWeb\ElectroestimuladorWeb\obj\Debug\ElectroestimuladorWeb.csprojAssemblyReference.cache

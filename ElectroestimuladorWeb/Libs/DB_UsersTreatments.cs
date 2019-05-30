@@ -29,6 +29,7 @@ namespace ElectroestimuladorWeb
         private int _body_part_id = 0;
         private int _treatment_id = 0;
         private int _wave_id = 0;
+        private int _injury_id = 0;
         private int _intensity = 0;
         private string _updated_at = string.Empty;
         private int _updated_by = 0;
@@ -43,6 +44,7 @@ namespace ElectroestimuladorWeb
         public int BodyPartId { get { return _body_part_id; } set { _body_part_id = value; } }
         public int TreatmentId { get { return _treatment_id; } set { _treatment_id = value; } }
         public int WaveId { get { return _wave_id; } set { _wave_id = value; } }
+        public int InjuryId { get { return _injury_id; } set { _injury_id = value; } }
         public int Intensity { get { return _intensity; } set { _intensity = value; } }
         public int UpdatedBy { get { return _updated_by; } set { _updated_by = value; } }
         public string UpdatedAt { get { return _updated_at; } set { _updated_at = value; } }
@@ -79,12 +81,12 @@ namespace ElectroestimuladorWeb
         #endregion
 
         #region Methods
-        public DataTable Insert()
+        public string Insert()
         {
             string msg = string.Empty, error = string.Empty;
             DataTable dt = new DataTable();
-            strSql = "insert into users_treatments (user_id, body_part_id, treatment_id, wave_id, intensity, updated_at, updated_by) " +
-                      "values(" + _user_id + ", " + _body_part_id + ", " + _treatment_id + ", " + _wave_id + ", " + _intensity + ", sysdate(),"+_user_id+")";
+            strSql = "insert into users_treatments (user_id, body_part_id, treatment_id, injury_id, wave_id, intensity, updated_at, updated_by) " +
+                      "values(" + _user_id + ", " + _body_part_id + ", " + _treatment_id + ", " + _injury_id + ", " + _wave_id + ", " + _intensity + ", sysdate(),"+_user_id+")";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -97,23 +99,12 @@ namespace ElectroestimuladorWeb
                 reader = commandDatabase.ExecuteReader();
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
-                error = "0";
-                msg = "Registro creado satisfactoriamente.";
             }
             catch (Exception e)
             {
-                error = "1";
                 msg = "Database ERROR. " + e.ToString();
             }   
-            DataTable dt2 = new DataTable();
-            dt2.Clear();
-            dt2.Columns.Add("error");
-            dt2.Columns.Add("mensaje");
-            DataRow row = dt2.NewRow();
-            row["error"] = error;
-            row["mensaje"] = msg;
-            dt2.Rows.Add(row);
-            return dt2;
+            return msg;
         }
 
         public bool Modify()

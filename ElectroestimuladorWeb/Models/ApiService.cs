@@ -15,7 +15,9 @@ namespace ElectroestimuladorWeb
         public string injury_id { get; set; }
         public string body_part_id { get; set; }
         public string user_id { get; set; }
-            
+        public string intensity { get; set; }
+        public string treatment_id { get; set; }
+        public string wave_id { get; set; }
 
 
     }

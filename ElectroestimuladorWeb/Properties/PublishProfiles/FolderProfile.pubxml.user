@@ -25,10 +25,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/31/2019 22:11:36</publishTime>
     </File>
     <File Include="bin/ElectroestimuladorWeb.dll">
-      <publishTime>05/16/2019 02:18:07</publishTime>
+      <publishTime>05/29/2019 23:40:27</publishTime>
     </File>
     <File Include="bin/ElectroestimuladorWeb.pdb">
-      <publishTime>05/16/2019 02:18:07</publishTime>
+      <publishTime>05/29/2019 23:40:27</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
       <publishTime>04/20/2019 10:15:50</publishTime>
