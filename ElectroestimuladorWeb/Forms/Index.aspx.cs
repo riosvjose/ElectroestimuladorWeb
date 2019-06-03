@@ -43,5 +43,10 @@ namespace ElectroestimuladorWeb.Forms
         {
             Response.Redirect("SearchUsers.aspx");
         }
+
+        protected void lbTreatments_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

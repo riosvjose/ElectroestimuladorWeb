@@ -9,8 +9,8 @@ using MySql.Data.MySqlClient;
 
 namespace ElectroestimuladorWeb
 {
-    // Description: Class refered to database table users
-    public class BD_Waves
+    // Description: Class refered to database table waves
+    public class DB_Waves
     {
         #region Libs
         GEN_VarSession axSesVar = new GEN_VarSession();
@@ -28,7 +28,7 @@ namespace ElectroestimuladorWeb
         private int _treatment_id = 0;
         private string _name = string.Empty;
         private int _frecuency = 0;
-        private int _pulse_time = 0;
+        private int _internal_frecuency = 0;
         private int _kind = 0;
         private string _updated_at = string.Empty;
         private int _updated_by = 0;
@@ -42,8 +42,8 @@ namespace ElectroestimuladorWeb
         public int TreatmentId { get { return _treatment_id; } set { _treatment_id = value; } }
         public string Name { get { return _name; } set { _name = value; } }
         public int Frecuency { get { return _frecuency; } set { _frecuency = value; } }
+        public int InternalFrecuency { get { return _internal_frecuency; } set { _internal_frecuency = value; } }
         public int Kind { get { return _kind; } set { _kind = value; } }
-        public int PulseTime { get { return _pulse_time; } set { _pulse_time = value; } }
         public int UpdatedBy { get { return _updated_by; } set { _updated_by = value; } }
         public string UpdatedAt { get { return _updated_at; } set { _updated_at = value; } }
 
@@ -61,11 +61,11 @@ namespace ElectroestimuladorWeb
         #endregion
 
         #region Constructor
-        public BD_Waves()
+        public DB_Waves()
         {
             _treatment_id = 0;
             _name = string.Empty;
-            _pulse_time = 0;
+            _internal_frecuency = 0;
             _kind = 0;
             _frecuency = 0;
             _updated_at = string.Empty;
@@ -78,12 +78,13 @@ namespace ElectroestimuladorWeb
         #endregion
 
         #region Methods
-        public DataTable Insert()
+        public bool Insert()
         {
+            bool blDone = false;
             string msg = string.Empty, error = string.Empty;
             DataTable dt = new DataTable();
-            strSql = "insert into waves (name, kind, frecuency, pulse_time_microsec, updated_at, updated_by ) " +
-                      "values(" + _name + "', " + _kind +","+_frecuency+","+_pulse_time+ "', sysdate(),"+_updated_by+")";
+            strSql = "insert into waves (name, kind, frecuency, internal_frec, updated_at, updated_by ) " +
+                      "values(" + _name + "', " + _kind +","+_frecuency+","+_internal_frecuency+ "', sysdate(),"+_updated_by+")";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -96,23 +97,13 @@ namespace ElectroestimuladorWeb
                 reader = commandDatabase.ExecuteReader();
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
-                error = "0";
-                msg = "Registro creado satisfactoriamente.";
+                blDone = true;
             }
             catch (Exception e)
             {
-                error = "1";
-                msg = "Database ERROR. " + e.ToString();
-            }   
-            DataTable dt2 = new DataTable();
-            dt2.Clear();
-            dt2.Columns.Add("error");
-            dt2.Columns.Add("mensaje");
-            DataRow row = dt2.NewRow();
-            row["error"] = error;
-            row["mensaje"] = msg;
-            dt2.Rows.Add(row);
-            return dt2;
+                _message = "Database ERROR. " + e.ToString();
+            }
+            return blDone;
         }
 
         public bool Modify()
@@ -125,7 +116,7 @@ namespace ElectroestimuladorWeb
             bool blOperacionCorrecta = false;
             return blOperacionCorrecta;
         }
-        public DataTable SeeByUser(string Uid)
+        public DataTable SeeByName()
         {
             DataTable dt = new DataTable();
             strSql = "SELECT * from waves order by name";

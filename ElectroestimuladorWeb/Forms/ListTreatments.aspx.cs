@@ -12,8 +12,8 @@ namespace ElectroestimuladorWeb.Forms
     {
         #region "Libraries"
         GEN_VarSession axVarSes = new GEN_VarSession();
-        DB_BodyParts body = new DB_BodyParts();
-        DB_Images image = new DB_Images();
+        BD_Treatments treatment = new BD_Treatments();
+
         #endregion
 
         #region Procedures
@@ -23,7 +23,7 @@ namespace ElectroestimuladorWeb.Forms
             {
                 pnError.Visible = false;
                 pnOK.Visible = false;
-                body.StrCon = axVarSes.Lee<string>("strCon");
+                treatment.StrCon = axVarSes.Lee<string>("strCon");
                 cargarGrid();
             }
             else
@@ -45,11 +45,11 @@ namespace ElectroestimuladorWeb.Forms
         
         protected void gvDatos1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            pnError.Visible = false;
+            /*pnError.Visible = false;
             pnOK.Visible = false;
-            pnmodify.Visible = true;
-            btncreate.Visible = false;
-            btnSave.Visible = true;
+            pnModifyTreatment.Visible = true;
+            btncreateTreatment.Visible = false;
+            btnSaveTreatment.Visible = true;
             int indice = Convert.ToInt32(e.CommandArgument);
             body.StrCon = axVarSes.Lee<string>("strCon");
             body.BodyPartId = Convert.ToInt32(gvDatos1.Rows[indice].Cells[0].Text);
@@ -57,14 +57,14 @@ namespace ElectroestimuladorWeb.Forms
             bool blOpCorrecta = false;
             if (e.CommandName == "modify")
             {
-                pnmodify.Visible = true;
+                pnModifyTreatment.Visible = true;
                 DataTable dt= body.SeeBodyImage();
                 if (dt.Rows.Count > 0)
                 {
                     DataRow dr = dt.Rows[0];
-                    tbName.Text = dr["name"].ToString();
-                    tbTitle.Text = dr["title"].ToString();
-                    tbUrl.Text = dr["image_url"].ToString();
+                    tbTreatmentName.Text = dr["name"].ToString();
+                    tbDesc.Text = dr["desciption"].ToString();
+                    /*tbUrl.Text = dr["image_url"].ToString();
                     axVarSes.Escribe("strBodyPartId", body.BodyPartId.ToString());
                     axVarSes.Escribe("strImageId", dr["image_id"].ToString());
                 }
@@ -78,118 +78,149 @@ namespace ElectroestimuladorWeb.Forms
                 pnVacio.Focus();
             }
             
-
+    */
         } 
         protected void cargarGrid()
         {
-            body.StrCon = axVarSes.Lee<string>("strCon");
+            treatment.StrCon = axVarSes.Lee<string>("strCon");
             gvDatos1.Columns[0].Visible = true;
             gvDatos1.Visible = true;
-            gvDatos1.DataSource = body.SeeAll();
+            gvDatos1.DataSource = treatment.SeeAll();
             gvDatos1.DataBind();
             gvDatos1.Columns[0].Visible = false;
         }
         #endregion
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-            try
-            {
-               
-                image.StrCon = axVarSes.Lee<string>("strCon");
-                image.ImageId = Convert.ToInt32(axVarSes.Lee<string>("strImageId"));
-                image.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
-                body.StrCon = axVarSes.Lee<string>("strCon");
-                body.Name = tbName.Text;
-                body.BodyPartId = Convert.ToInt32(axVarSes.Lee<string>("strBodyPartId"));
-                body.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
-                image.ImageUrl = tbUrl.Text;
-                image.ImageTitle = tbTitle.Text;
-                if (body.Modify())
-                {
-                    if (image.Modify())
-                    {
-                        pnOK.Visible = true;
-                        lblOK.Text = "Datos actualizados satisfactoriamente.";
-                        pnmodify.Visible = false;
-                        cargarGrid();
-                    }
-                    else
-                    {
-                        pnError.Visible = true;
-                        lblError.Text = "Los datos se actualizaron parcialmente. " + image.Message;
-                    }
-                }
-                else
-                {
-                    pnError.Visible = true;
-                    lblError.Text = "No se pudieron actualizar los datos. " + body.Message;
-                }
-            }
-            catch (Exception ex)
-            {
-                pnError.Visible = true;
-                lblError.Text = "No se pudieron actualizar los datos. " + e.ToString();
-            }
-        }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            pnmodify.Visible = false;
-        }
-
-        protected void btncreate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DB_Images image = new DB_Images();
-                image.StrCon = axVarSes.Lee<string>("strCon");
-                image.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
-                body.StrCon = axVarSes.Lee<string>("strCon");
-                body.Name = tbName.Text;
-                body.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
-                image.ImageUrl = tbUrl.Text;
-                image.ImageTitle = tbTitle.Text;
-                if (image.Insert())
-                {
-                    DataTable dt=image.SeeByParams();
-                    body.ImageId = Convert.ToInt32(dt.Rows[0][0].ToString());
-                    if (body.Insert())
-                    {
-                        pnOK.Visible = true;
-                        pnmodify.Visible = false;
-                        lblOK.Text = "Datos actualizados satisfactoriamente.";
-                        cargarGrid();
-                    }
-                    else
-                    {
-                        pnError.Visible = true;
-                        lblError.Text = "Los datos se crearon parcialmente. " + body.Message;
-                    }
-                }
-                else
-                {
-                    pnError.Visible = true;
-                    lblError.Text = "No se pudieron actualizar los datos. " + image.Message;
-                }
-            }
-            catch (Exception ex)
-            {
-                pnError.Visible = true;
-                lblError.Text = "No se pudieron actualizar los datos. " + e.ToString();
-            }
-        }
-
-        protected void btnCreateNew_Click(object sender, EventArgs e)
+        protected void btnCreateNewWave_Click(object sender, EventArgs e)
         {
             pnError.Visible = false;
             pnOK.Visible = false;
-            pnmodify.Visible = true;
-            btncreate.Visible = true;
-            btnSave.Visible = false;
-            tbTitle.Text = "";
-            tbName.Text = "";
-            tbUrl.Text = "";
+            pnmodifyWave.Visible = true;
+            btnCreateWave.Visible = true;
+            btnSaveWave.Visible = false;
+            tbWaveName.Text = "";
+            tbFrec.Text = "";
+            tbIntFrec.Text = "";
+        }
+
+        protected void btnCreateNewTreatment_Click(object sender, EventArgs e)
+        {
+            pnError.Visible = false;
+            pnOK.Visible = false;
+            pnModifyTreatment.Visible = true;
+            btncreateTreatment.Visible = true;
+            btnSaveTreatment.Visible = false;
+            tbTreatmentName.Text = "";
+            tbDesc.Text = "";
+            LoadDdlWaves();
+        }
+
+        protected void btnSaveWave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCreateWave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DB_Waves waves = new DB_Waves();
+                waves.StrCon = axVarSes.Lee<string>("strCon");
+                waves.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
+                waves.Name = tbWaveName.Text;
+                waves.Frecuency = Convert.ToInt32(tbFrec.Text);
+                waves.InternalFrecuency = Convert.ToInt32(tbFrec.Text);
+                if (waves.Insert())
+                {
+                        lblOK.Text = "Datos actualizados satisfactoriamente.";
+                        cargarGrid();
+                }
+                else
+                {
+                    pnError.Visible = true;
+                    lblError.Text = "No se pudieron insertar los datos. " + waves.Message;
+                }
+            }
+            catch (Exception ex)
+            {
+                pnError.Visible = true;
+                lblError.Text = "No se pudieron actualizar los datos. " + e.ToString();
+            }
+        }
+
+        protected void btnCancelWave_Click(object sender, EventArgs e)
+        {
+            pnmodifyWave.Visible = false;
+            pnPrincipal.Visible = true;
+        }
+
+        protected void btnSaveTreatment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btncreateTreatment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BD_Treatments treatment = new BD_Treatments();
+                treatment.StrCon = axVarSes.Lee<string>("strCon");
+                treatment.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
+                treatment.Name = tbWaveName.Text;
+                treatment.Description = tbDesc.Text;
+                
+                if (treatment.Insert())
+                {
+                    DataTable dt = treatment.SeeIdByParams();
+                    if (dt.Rows.Count>0)
+                    {
+                        DataRow dr = dt.Rows[0];
+                        BD_TreatmentsWaves treatmentWaves = new BD_TreatmentsWaves();
+                        treatmentWaves.StrCon = axVarSes.Lee<string>("strCon");
+                        treatmentWaves.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
+                        treatmentWaves.TreatmentId = Convert.ToInt32(dr["treatment_id"].ToString());
+                        treatmentWaves.WaveId = Convert.ToInt32(ddlwave.SelectedValue);
+                        if (treatmentWaves.Insert())
+                        {
+                            lblOK.Text = "Datos actualizados satisfactoriamente.";
+                            pnPrincipal.Visible = true;
+                            pnModifyTreatment.Visible = false;
+                            cargarGrid();
+                        }
+                        else
+                        {
+                            pnError.Visible = true;
+                            lblError.Text = "No se pudieron insertar los datos. " + treatmentWaves.Message;
+                        }
+                    }
+                }
+                else
+                {
+                    pnError.Visible = true;
+                    lblError.Text = "No se pudieron insertar los datos. " + treatment.Message;
+                }
+            }
+            catch (Exception ex)
+            {
+                pnError.Visible = true;
+                lblError.Text = "No se pudieron actualizar los datos. " + e.ToString();
+            }
+        }
+
+        protected void btnCancelTreatment_Click(object sender, EventArgs e)
+        {
+            pnModifyTreatment.Visible = false;
+            pnPrincipal.Visible = true;
+        }
+        public void LoadDdlWaves()
+        {
+            DB_Waves waves = new DB_Waves();
+            waves.StrCon = axVarSes.Lee<string>("strCon");
+            ddlwave.DataSource = waves.SeeByName();
+            ddlwave.DataTextField = "wave_id";
+            ddlwave.DataValueField = "name";
+            ddlwave.DataBind();
         }
     }
     
