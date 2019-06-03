@@ -84,7 +84,7 @@ namespace ElectroestimuladorWeb
             string msg = string.Empty, error = string.Empty;
             DataTable dt = new DataTable();
             strSql = "insert into waves (name, kind, frecuency, internal_frec, updated_at, updated_by ) " +
-                      "values(" + _name + "', " + _kind +","+_frecuency+","+_internal_frecuency+ "', sysdate(),"+_updated_by+")";
+                      "values('" + _name + "', " + _kind +","+_frecuency+","+_internal_frecuency+ ", sysdate(),"+_updated_by+")";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;

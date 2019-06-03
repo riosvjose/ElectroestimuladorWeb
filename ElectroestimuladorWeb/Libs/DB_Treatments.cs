@@ -112,7 +112,7 @@ namespace ElectroestimuladorWeb
         public DataTable SeeAll()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT t.*, w.*" +
+            strSql = "SELECT t.*, t.name as treatment_name, w.*, w.name as wave_name" +
                 " from treatments t, waves w, treatments_waves" +
                 " tw where t.treatment_id=tw.treatment_id" +
                 " and w.wave_id=tw.wave_id" +
@@ -171,6 +171,40 @@ namespace ElectroestimuladorWeb
                     string error = "1";
                     string mensaje = "Database ERROR. " + e.ToString();
                     return dt;
+                }
+            }
+            return dt;
+        }
+        public DataTable SeeTreatmentDetails()
+        {
+            DataTable dt = new DataTable();
+            if (!string.IsNullOrEmpty(_treatment_id.ToString()))
+            {
+
+                strSql = "select t.treatment_id, t.name treatment, t.description, tw.wave_id wave, w.name wave " +
+                    "from treatments t, waves w, treatments_waves tw " +
+                    "where t.treatment_id = tw.treatment_id" +
+                    "and w.wave_id = tw.wave_id " +
+                    "and t.treatment_id = " + _treatment_id +
+                    " order by t.name";
+                MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+                MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+                commandDatabase.CommandTimeout = 60;
+                MySqlDataReader reader;
+                MySqlDataAdapter da;
+                DataTable ds = new DataTable();
+                try
+                {
+                    databaseConnection.Open();
+                    reader = commandDatabase.ExecuteReader();
+                    da = new MySqlDataAdapter(commandDatabase);
+                    databaseConnection.Close();
+                    da.Fill(dt);
+                    
+                }
+                catch (Exception e)
+                {
+                    _message = "Database ERROR. " + e.ToString();
                 }
             }
             return dt;

@@ -71,9 +71,9 @@ namespace ElectroestimuladorWeb
         #endregion
 
         #region Methods
-        public DataTable Insert()
+        public bool Insert()
         {
-            string msg = string.Empty, error = string.Empty;
+            bool bldone = false;
             DataTable dt = new DataTable();
             strSql = "insert into domains (domain, value, descriptiom, updated_at, updated_by) " +
                       "values(" + "'" + _domain  + "',"+_value+", '" + _description  + "', sysdate(),"+_updated_by+")";
@@ -89,23 +89,13 @@ namespace ElectroestimuladorWeb
                 reader = commandDatabase.ExecuteReader();
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
-                error = "0";
-                msg = "Registro creado satisfactoriamente.";
+                bldone = true;
             }
             catch (Exception e)
             {
-                error = "1";
-                msg = "Database ERROR. " + e.ToString();
+                _message = "Database ERROR. " + e.ToString();
             }   
-            DataTable dt2 = new DataTable();
-            dt2.Clear();
-            dt2.Columns.Add("error");
-            dt2.Columns.Add("mensaje");
-            DataRow row = dt2.NewRow();
-            row["error"] = error;
-            row["mensaje"] = msg;
-            dt2.Rows.Add(row);
-            return dt2;
+            return bldone;
         }
 
         public bool Modify()
@@ -118,10 +108,10 @@ namespace ElectroestimuladorWeb
             bool blOperacionCorrecta = false;
             return blOperacionCorrecta;
         }
-        public DataTable SeeAll()
+        public DataTable SeeDomain()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT * from domains where domain='"+_domain+"'";
+            strSql = "SELECT * from domains where domain_name='"+_domain+"'";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -135,25 +125,16 @@ namespace ElectroestimuladorWeb
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
                 da.Fill(ds);
-                return ds;
+                
             }
             catch (Exception e)
             {
-                string error = "1";
-                string mensaje = "Database ERROR. " + e.ToString();
-                DataTable dt2 = new DataTable();
-                dt2.Clear();
-                dt2.Columns.Add("error");
-                dt2.Columns.Add("mensaje");
-                DataRow row = dt2.NewRow();
-                row["error"] = error;
-                row["mensaje"] = mensaje;
-                dt2.Rows.Add(row);
-                return dt2;
+                _message= "Database ERROR. " + e.ToString();
             }
-           
+            return ds;
+
         }
-        
+
         #endregion
     }
 }

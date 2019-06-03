@@ -157,6 +157,7 @@ namespace ElectroestimuladorWeb.Forms
                     if (body.Insert())
                     {
                         pnOK.Visible = true;
+                        pnBodyParts.Visible = true;
                         pnmodify.Visible = false;
                         lblOK.Text = "Datos actualizados satisfactoriamente.";
                         cargarGrid();

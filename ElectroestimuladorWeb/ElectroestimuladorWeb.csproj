@@ -144,6 +144,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Forms\ListInjuries.aspx" />
     <Content Include="Forms\RegisterForm.aspx" />
     <Content Include="Forms\ListTreatments.aspx" />
     <Content Include="Forms\ListBody.aspx" />
@@ -264,6 +265,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListInjuries.aspx.cs">
+      <DependentUpon>ListInjuries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ListInjuries.aspx.designer.cs">
+      <DependentUpon>ListInjuries.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Secondary.Master.cs">
       <DependentUpon>Secondary.Master</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Principal.Master" AutoEventWireup="true"  CodeBehind="ListTreatments.aspx.cs" Inherits="ElectroestimuladorWeb.Forms.ListTreatments" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Principal.Master" AutoEventWireup="true"  CodeBehind="ListInjuries.aspx.cs" Inherits="ElectroestimuladorWeb.Forms.ListInjuries" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -40,11 +40,10 @@
                                         <div class="col-xs-12">
                                             <div class="form-inline">
                                                 <div class="form-group">
-                                                    <asp:GridView ID="gvData1" runat="server" CssClass="table table-striped table-bordered table-hover input-sm" AutoGenerateColumns="False" OnRowCommand="gvDatos1_RowCommand" >
+                                                    <asp:GridView ID="gvDatos1" runat="server" CssClass="table table-striped table-bordered table-hover input-sm" AutoGenerateColumns="False" OnRowCommand="gvDatos1_RowCommand" >
                                                         <Columns>
                                                             <asp:BoundField DataField="treatment_id" HeaderText="treatment_id"  />
                                                             <asp:BoundField DataField="treatment_name" HeaderText="Tratamiento" />
-                                                            <asp:BoundField DataField="description" HeaderText="Descripción" />
                                                             <asp:BoundField DataField="wave_id" HeaderText="wave_id"  />
                                                             <asp:BoundField DataField="wave_name" HeaderText="Onda" />
                                                              <asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
@@ -69,8 +68,8 @@
                      <div class="panel-footer">
                         <div class="btn-toolbar" role="toolbar">
                             <div class="btn-group">
-                                <asp:Button ID="btnCreateNewWave" runat="server" CssClass="btn btn-primary" Text="Nueva onda" CausesValidation="false" OnClick="btnCreateNewWave_Click"/>
-                                <asp:Button ID="btnCreateNewTreatment" runat="server" CssClass="btn btn-primary" Text="Nuevo tratamiento" CausesValidation="false" OnClick="btnCreateNewTreatment_Click"/>
+                                <asp:Button ID="btnCreateNewWave" runat="server" CssClass="btn btn-primary" Text="Nueva onda" CausesValidation="True" OnClick="btnCreateNewWave_Click"/>
+                                <asp:Button ID="btnCreateNewTreatment" runat="server" CssClass="btn btn-primary" Text="Nueva onda" CausesValidation="True" OnClick="btnCreateNewTreatment_Click"/>
                             </div>
                           </div>
                         </div>
@@ -97,7 +96,7 @@
                             </div>
                             </div>
                          <div class="row mb-3">
-                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                                  <strong><asp:Label ID="lblKind" runat="server" Text="Tipo: "></asp:Label></strong>
                                  <asp:DropDownList ID="ddlKind" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
                               </div>
@@ -121,8 +120,8 @@
 			        <div class="panel-footer">
                         <div class="btn-toolbar" role="toolbar">
                             <div class="btn-group">
-                                 <asp:Button ID="btnSaveWave" runat="server" CssClass="btn btn-primary" Text="Guardar" CausesValidation="true" OnClick="btnSaveWave_Click" Visible="false"/>
-                                <asp:Button ID="btnCreateWave" runat="server" CssClass="btn btn-primary" Text="Crear" CausesValidation="true" OnClick="btnCreateWave_Click" Visible="false"/>
+                                 <asp:Button ID="btnSaveWave" runat="server" CssClass="btn btn-primary" Text="Guardar" CausesValidation="True" OnClick="btnSaveWave_Click" Visible="false"/>
+                                <asp:Button ID="btnCreateWave" runat="server" CssClass="btn btn-primary" Text="Crear" CausesValidation="True" OnClick="btnCreateWave_Click" Visible="false"/>
                                 <asp:Button ID="btnCancelWave" runat="server" CssClass="btn btn-warning" Text="Cancelar" CausesValidation="false" OnClick="btnCancelWave_Click"/>
                             </div>
                           </div>

@@ -46,7 +46,7 @@ namespace ElectroestimuladorWeb.Forms
 
         protected void lbTreatments_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ListTreatments.aspx");
         }
     }
 }

@@ -28,7 +28,7 @@
                     <li>
                         <div class="hidden-xs">
                             <div>
-                                <h3 style ="color:#0e0e38; text-align:center">Reportes<br/>Electroestimulación</h3>
+                                <h3 style ="color:#0e0e38; text-align:center">Electroestimulador</h3>
                                 <img src="../Img/escudo.png" class="img-responsive" width="180" alt="escudo" style="margin: 0 auto; padding-top: 10px; padding-bottom: 10px;" />
                             </div>
                         </div>
@@ -37,11 +37,17 @@
                         <a href="Index.aspx"><i class="fa fa-home fa-fw" ></i>Inicio</a>
                     </li>
                     <li>
-                        <a id="sbLesiones" runat="server" href="Lesiones.aspx"><i class="fa fa-industry fa-fw" ></i>Lesiones</a>
+                        <a id="sbInjuries" runat="server" href="#"><i class="fa fa-blind" ></i>Lesiones</a>
                     </li>                   
                     <li>
-                       <a id="A1" runat="server" href="Lesiones.aspx"><i class="fa fa-industry fa-fw" ></i>Lesiones</a>
-                    </li>                                                  
+                       <a id="sbTreatments" runat="server" href="ListTreatments.aspx"><i class="fa fa-medkit" ></i>Tratamientos</a>
+                    </li>  
+                    <li>
+                       <a id="sbBodyParts" runat="server" href="ListBody.aspx"><i class="fa fa-heart" ></i>Partes del cuerpo</a>
+                    </li> 
+                    <li>
+                       <a id="sbPeople" runat="server" href="SearchUsers.aspx"><i class="fa fa-search" ></i>Personas</a>
+                    </li> 
                 </ul>
         </nav>
         <!-- Page Content Holder -->
