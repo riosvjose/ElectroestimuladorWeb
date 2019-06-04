@@ -206,10 +206,25 @@ namespace ElectroestimuladorWeb.Forms
 
         private void CargarDatosIniciales(string strCon)
         {
+            if (!string.IsNullOrEmpty(axVarSes.Lee<string>("strUserID")))
+            {
+        
+            }
+            else
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+        }
+        private void CargarDatosGrafica()
+        {
 
             UserTreatments.StrCon = axVarSes.Lee<string>("StrCon");
-            UserTreatments.UserId = 1;// Convert.ToInt64(axVarSes.Lee<string>("strProyecto"));*************
-            UserTreatments.SeeByUser();
+            UserTreatments.UserId = Convert.ToInt32(axVarSes.Lee<string>("strPersonId"));
+            UserTreatments.BodyPartId= Convert.ToInt32(axVarSes.Lee<string>("strBodyPartId"));
+            UserTreatments.InjuryId = Convert.ToInt32(axVarSes.Lee<string>("strInjuryId"));
+            UserTreatments.WaveId = Convert.ToInt32(axVarSes.Lee<string>("strWaveId"));
+            UserTreatments.TreatmentId = Convert.ToInt32(axVarSes.Lee<string>("strTreatmentId"));
+            //UserTreatments.SeeByUser();
             DataTable dtDatos = UserTreatments.SeeByUser();
             DataTable dtParam = new DataTable();
             dtParam.Columns.Add("titulo", Type.GetType("System.String"));
@@ -257,7 +272,7 @@ namespace ElectroestimuladorWeb.Forms
         }
         #endregion
 
-        #region "Eventos"
+        #region "Events"
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -296,5 +311,14 @@ namespace ElectroestimuladorWeb.Forms
         }
         #endregion
 
+        protected void btnSearDates_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -26,8 +26,53 @@
                     </ProgressTemplate>
                 </asp:UpdateProgress>
             </div>
-
-            <asp:Panel ID="pnPrincipal" runat="server">
+            <asp:Panel ID="pnDates" runat="server">
+		        <div class="panel panel-info">
+                    <%--ENCABEZADO DEL PANEL--%>
+			        <div class="panel-heading">
+                        <h3> <strong><asp:Label ID="lbldates" runat="server" Text="Rango de fechas del reporte"></asp:Label></strong></h3>
+			        </div>
+                    <%--CUERPO DEL PANEL--%>
+			        <div class="panel-body">
+                         <br/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2">
+                                <strong><asp:Label ID="lblInitDate" runat="server" Text="Fecha de inicio"></asp:Label>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="tbInitdate" CssClass="text-danger" ErrorMessage="El campo fecha inicio es obligatorio.">*</asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="CompareValidator33" runat="server" ControlToValidate="tbInitdate" CssClass="text-danger" ErrorMessage="El formato de la fecha es incorrecto (DD/MM/YYYY)" Operator="DataTypeCheck" Type="Date">*</asp:CompareValidator>
+                                </strong>
+                            </div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                                <asp:TextBox ID="tbInitdate" runat="server" CssClass="form-control" MaxLength="10" AutoCompleteType="Disabled"></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender ID="tbInitdate_CalendarExtender" runat="server" BehaviorID="tbInitdate_CalendarExtender" TargetControlID="tbInitdate" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-2">
+                                <strong><asp:Label ID="lblEndDate" runat="server" Text="Fecha Fin:"></asp:Label>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ControlToValidate="tbEndDate" CssClass="text-danger" ErrorMessage="El campo fecha fin es obligatorio.">*</asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="CompareValidator35" runat="server" ControlToValidate="tbEndDate" CssClass="text-danger" ErrorMessage="El formato de la fecha es incorrecto (DD/MM/YYYY)" Operator="DataTypeCheck" Type="Date">*</asp:CompareValidator>
+                                <asp:CompareValidator ID="CompareValidator34" runat="server" ControlToCompare="tbEndDate" ControlToValidate="tbInitdate" CssClass="text-danger" ErrorMessage="La 'Fecha fin' de la búsqueda debe ser mayor o igual que la fecha de inicio." Operator="LessThanEqual" Type="Date">*</asp:CompareValidator>
+                                </strong>
+                            </div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                                <asp:TextBox ID="tbEndDate" runat="server" CssClass="form-control" MaxLength="10" AutoCompleteType="Disabled"></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender ID="tbEndDate_CalendarExtender" runat="server" BehaviorID="tbEndDate_CalendarExtender" TargetControlID="tbEndDate" />
+                            </div>
+                        </div>
+                       </div> 
+                    <%--PIE DEL PANEL--%>	 
+                     <div class="panel-footer">
+                        <div class="row">
+                            <div class="btn-group">
+                                     <asp:Button ID="btnSearDates" runat="server" CssClass="btn btn-primary" Text="Buscar" CausesValidation="True" OnClick="btnSearDates_Click" />
+                                     <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-danger" Text="Cancelar" CausesValidation="False" OnClick="btnCancel_Click" />
+                                </div>
+                        </div>
+			        </div>
+			   </div>
+            </asp:Panel>
+            <asp:Panel ID="pnPrincipal" runat="server" Visible="false">
 		        <div class="panel panel-info">
                     <%--ENCABEZADO DEL PANEL--%>
 			        <div class="panel-heading">
@@ -156,19 +201,23 @@
 			        </div>
 		        </div>
             </asp:Panel>
+            <%--SUCCESS AND ERROR MESSAGES PANEL--%>
             <div class="row">
-	            <asp:Panel ID="pnMensajeError" runat="server" Visible="false">
-		            <div class="alert alert-danger alert-dismissable">
-			            <asp:Label ID="lblMensajeError" runat="server" Text=""></asp:Label><a href="#" class="alert-link"></a>.
-		            </div>
-	            </asp:Panel>
-
-	            <asp:Panel ID="pnMensajeOK" runat="server" Visible="false">
-		            <div class="alert alert-success alert-dismissable">
-			            <asp:Label ID="lblMensajeOK" runat="server" Text=""></asp:Label><a href="#" class="alert-link"></a>.
-		            </div>
-	            </asp:Panel>
-             </div>
+	            <div class="col-md-6">
+	                <asp:Panel ID="pnError" runat="server" Visible="false">
+		                <div class="alert alert-danger alert-dismissable">
+			                <asp:Label ID="lblError" runat="server" Text=""></asp:Label><a href="#" class="alert-link"></a>.
+		                </div>
+	                </asp:Panel>
+	                <asp:Panel ID="pnOK" runat="server" Visible="false">
+		                <div class="alert alert-success alert-dismissable">
+			                <asp:Label ID="lblOK" runat="server" Text=""></asp:Label><a href="#" class="alert-link"></a>.
+		                </div>
+	                </asp:Panel>
+                    <asp:Panel ID="pnVacio" runat="server" Visible="false">
+	                </asp:Panel>
+                    <%--ERROR MESSAGE AJAXValidator--%>
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="False" ShowSummary="True" CssClass="alert alert-danger" />
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

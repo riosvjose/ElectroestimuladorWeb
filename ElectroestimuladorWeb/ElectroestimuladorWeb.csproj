@@ -44,8 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit">
-      <HintPath>..\..\..\..\UCB\SIS\ATENEA\ATENEA\bin\AjaxControlToolkit.dll</HintPath>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.1\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="BCrypt.Net-Next, Version=3.1.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.3.1.3\lib\net452\BCrypt.Net-Next.dll</HintPath>
@@ -179,6 +179,7 @@
     <Content Include="Forms\ListBody.aspx" />
     <Content Include="Forms\Results.aspx" />
     <Content Include="Forms\SACAD_ESTAD_Resultado.aspx" />
+    <Content Include="Forms\UserInjuries.aspx" />
     <Content Include="Forms\SearchUsers.aspx" />
     <Content Include="Forms\Index.aspx" />
     <Content Include="Forms\Salir.aspx" />
@@ -330,6 +331,13 @@
     </Compile>
     <Compile Include="Forms\SACAD_ESTAD_Resultado.aspx.designer.cs">
       <DependentUpon>SACAD_ESTAD_Resultado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserInjuries.aspx.cs">
+      <DependentUpon>UserInjuries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UserInjuries.aspx.designer.cs">
+      <DependentUpon>UserInjuries.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Secondary.Master.cs">
       <DependentUpon>Secondary.Master</DependentUpon>

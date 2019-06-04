@@ -38,6 +38,10 @@ namespace ElectroestimuladorWeb
 
             //Procedures data
             Session["strBodyPartId"] = "";
+            Session["strPersonId"] = "";
+            Session["strInjuryId"] = "";
+            Session["strWaveId"] = "";
+            Session["strTreatmentId"] = "";
             Session["strImageId"] = "";
         }
     }

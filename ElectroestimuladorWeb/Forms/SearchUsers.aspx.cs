@@ -19,7 +19,7 @@ namespace ElectroestimuladorWeb.Forms
         #region Procedures
         private void CargarDatosIniciales(string strCon)
         {
-            if (!string.IsNullOrEmpty(strCon))
+            if (!string.IsNullOrEmpty(axVarSes.Lee<string>("strUserID")))
             {
                
             }
@@ -44,10 +44,10 @@ namespace ElectroestimuladorWeb.Forms
             pnError.Visible = false;
             pnOK.Visible = false;
             libUser.StrCon = axVarSes.Lee<string>("strCon");
-            gvDatos1.Visible = true;
-            gvDatos1.DataSource=libUser.Search(tbSearch.Text);
-            gvDatos1.DataBind();
-            if (gvDatos1.Rows.Count > 0)
+            gvData1.Visible = true;
+            gvData1.DataSource=libUser.Search(tbSearch.Text);
+            gvData1.DataBind();
+            if (gvData1.Rows.Count > 0)
             {
                 pnFindedUsers.Visible = true;
             }
@@ -68,7 +68,8 @@ namespace ElectroestimuladorWeb.Forms
             bool blOpCorrecta = false;
             if (e.CommandName == "ver")
             {
-                Response.Redirect("Results.aspx");
+                axVarSes.Escribe("strPersonId", gvData1.Rows[indice].Cells[0].Text.ToString());
+                Response.Redirect("UserInjuries.aspx");
             }
             if (blOpCorrecta)
             {

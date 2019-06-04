@@ -94,13 +94,13 @@ namespace ElectroestimuladorWeb.Forms {
         protected global::System.Web.UI.WebControls.Label lbltitleFindedUsers;
         
         /// <summary>
-        /// gvDatos1 control.
+        /// gvData1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDatos1;
+        protected global::System.Web.UI.WebControls.GridView gvData1;
         
         /// <summary>
         /// pnError control.
