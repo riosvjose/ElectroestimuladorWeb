@@ -66,9 +66,9 @@ namespace ElectroestimuladorWeb.Forms
             libUser.StrCon = axVarSes.Lee<string>("strCon");
             
             bool blOpCorrecta = false;
-            if (e.CommandName == "agregar")
+            if (e.CommandName == "ver")
             {
-                
+                Response.Redirect("Results.aspx");
             }
             if (blOpCorrecta)
             {

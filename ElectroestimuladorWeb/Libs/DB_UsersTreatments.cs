@@ -120,7 +120,18 @@ namespace ElectroestimuladorWeb
         public DataTable SeeByUser()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT * from users_treatments where user_id="+_user_id;
+            strSql = "SELECT distinct i.injury_id, i.name as injury, t.treatment_id, t.name as treatment, w.name as wave, w.wave_id, b.body_part_id, b.name as body_part, Max(ut.updated_at)" +
+                " from users_treatments ut, injuries i, treatments t, treatments_waves tw, waves w, body_parts b, users u" +
+                " where ut.user_id="+_user_id+
+                " and ut.user_id=u.user_id"+
+                " and ut.treatment_id=t.treatment_id" +
+                " and t.treatment_id=tw.treatment_id" +
+                " and tw.wave_id=w.wave_id" +
+                " and ut.wave_id=tw.wave_id " +
+                " and ut.injury_id=i.injury_id" +
+                " and b.body_part_id=ut.body_part_id" +
+                " group by i.injury_id, i.name, t.treatment_id, t.name, w.name, w.wave_id, b.body_part_id, b.name " +
+                " order by max(ut.updated_at)";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;

@@ -112,7 +112,7 @@ namespace ElectroestimuladorWeb
         public DataTable SeeAll()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT t.*, t.name as treatment_name, w.*, w.name as wave_name" +
+            strSql = "SELECT t.*, t.name as treatment_name, w.*, w.name as wave_name, tw.time_minutes" +
                 " from treatments t, waves w, treatments_waves" +
                 " tw where t.treatment_id=tw.treatment_id" +
                 " and w.wave_id=tw.wave_id" +

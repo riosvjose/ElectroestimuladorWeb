@@ -6,7 +6,7 @@
         <ContentTemplate>
             <div class="row">
 	            <div class="col-xs-12">
-		            <h1>Administrar tratamientos</h1>
+		            <h1>Administrar padecimientos</h1>
 	            </div>
             </div>            
             <div class="row">
@@ -40,7 +40,7 @@
                                         <div class="col-xs-12">
                                             <div class="form-inline">
                                                 <div class="form-group">
-                                                    <asp:GridView ID="gvDatos1" runat="server" CssClass="table table-striped table-bordered table-hover input-sm" AutoGenerateColumns="False" OnRowCommand="gvDatos1_RowCommand" >
+                                                    <asp:GridView ID="gvData1" runat="server" CssClass="table table-striped table-bordered table-hover input-sm" AutoGenerateColumns="False" OnRowCommand="gvDatos1_RowCommand" >
                                                         <Columns>
                                                             <asp:BoundField DataField="injury_id" HeaderText="injury_id"  />
                                                             <asp:BoundField DataField="injury" HeaderText="Padecimiento" />
@@ -48,6 +48,7 @@
                                                             <asp:BoundField DataField="treatment" HeaderText="Tratamiento" />
                                                             <asp:BoundField DataField="wave_id" HeaderText="wave_id" />
                                                             <asp:BoundField DataField="wave" HeaderText="Onda" />
+                                                            <asp:BoundField DataField="time_minutes" HeaderText="Tiempo (minutos)" />
                                                              <asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
                                                                  <ControlStyle CssClass="btn btn-sm btn-warning "/>
                                                             </asp:ButtonField>
@@ -107,7 +108,7 @@
                          <div class="row mb-3">
                             <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
                                  <strong><asp:Label ID="lblTreatment" runat="server" Text="Tratamiento: "></asp:Label></strong>
-                                 <asp:DropDownList ID="ddlTreatment" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                                 <asp:DropDownList ID="ddlTreatment" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlTreatment_SelectedIndexChanged"></asp:DropDownList>
                               </div>
                             </div>
                          <div class="row">

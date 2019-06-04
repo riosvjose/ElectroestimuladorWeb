@@ -175,7 +175,7 @@ namespace ElectroestimuladorWeb.Forms
                 BD_Treatments treatment = new BD_Treatments();
                 treatment.StrCon = axVarSes.Lee<string>("strCon");
                 treatment.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
-                treatment.Name = tbWaveName.Text;
+                treatment.Name = tbTreatmentName.Text;
                 treatment.Description = tbDesc.Text;
                 
                 if (treatment.Insert())
@@ -189,6 +189,7 @@ namespace ElectroestimuladorWeb.Forms
                         treatmentWaves.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
                         treatmentWaves.TreatmentId = Convert.ToInt32(dr["treatment_id"].ToString());
                         treatmentWaves.WaveId = Convert.ToInt32(ddlwave.SelectedValue);
+                        treatmentWaves.TimeMinutes = Convert.ToInt32(tbTime.Text);
                         if (treatmentWaves.Insert())
                         {
                             lblOK.Text = "Datos actualizados satisfactoriamente.";

@@ -24,7 +24,7 @@ namespace ElectroestimuladorWeb.Forms
                 pnError.Visible = false;
                 pnOK.Visible = false;
                 treatment.StrCon = axVarSes.Lee<string>("strCon");
-                cargarGrid();
+                LoadGrid();
             }
             else
             {
@@ -55,7 +55,7 @@ namespace ElectroestimuladorWeb.Forms
             //treatment. = Convert.ToInt32(gvDatos1.Rows[indice].Cells[0].Text);
             if (e.CommandName == "modify")
             {
-                DataTable dt = treatment.SeeDetails(gvDatos1.Rows[indice].Cells[0].Text);
+                DataTable dt = treatment.SeeDetails(gvData1.Rows[indice].Cells[0].Text);
                 if (dt.Rows.Count > 0)
                 {
                     DataRow dr = dt.Rows[0];
@@ -68,18 +68,18 @@ namespace ElectroestimuladorWeb.Forms
                 }
             }
         } 
-        protected void cargarGrid()
+        protected void LoadGrid()
         {
             treatment.StrCon = axVarSes.Lee<string>("strCon");
-            gvDatos1.Columns[0].Visible = true;
-            gvDatos1.Columns[2].Visible = true;
-            gvDatos1.Columns[4].Visible = true;
-            gvDatos1.Visible = true;
-            gvDatos1.DataSource = treatment.SeeTreatmentInjuryDetails();
-            gvDatos1.DataBind();
-            gvDatos1.Columns[0].Visible = false;
-            gvDatos1.Columns[2].Visible = false;
-            gvDatos1.Columns[4].Visible = false;
+            gvData1.Columns[0].Visible = true;
+            gvData1.Columns[2].Visible = true;
+            gvData1.Columns[4].Visible = true;
+            gvData1.Visible = true;
+            gvData1.DataSource = treatment.SeeTreatmentInjuryDetails();
+            gvData1.DataBind();
+            gvData1.Columns[0].Visible = false;
+            gvData1.Columns[2].Visible = false;
+            gvData1.Columns[4].Visible = false;
         }
         #endregion
 
@@ -185,6 +185,11 @@ namespace ElectroestimuladorWeb.Forms
             tbInjuryDesc.Text = "";
             tbInjuryName.Text = "";
             LoadDdlTreatments();
+            LoadDdlWaves();
+        }
+
+        protected void ddlTreatment_SelectedIndexChanged(object sender, EventArgs e)
+        {
             LoadDdlWaves();
         }
     }

@@ -37,7 +37,7 @@
                         <a href="Index.aspx"><i class="fa fa-home fa-fw" ></i>Inicio</a>
                     </li>
                     <li>
-                        <a id="sbInjuries" runat="server" href="#"><i class="fa fa-blind" ></i>Lesiones</a>
+                        <a id="sbInjuries" runat="server" href="ListInjuries.aspx"><i class="fa fa-blind" ></i>Lesiones</a>
                     </li>                   
                     <li>
                        <a id="sbTreatments" runat="server" href="ListTreatments.aspx"><i class="fa fa-medkit" ></i>Tratamientos</a>
