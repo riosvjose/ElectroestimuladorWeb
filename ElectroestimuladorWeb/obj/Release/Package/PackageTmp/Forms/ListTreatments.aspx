@@ -25,7 +25,7 @@
             </div>
             <br />
              <%--panel finded users--%>
-            <asp:Panel ID="pnBodyParts" runat="server" Visible="true">
+            <asp:Panel ID="pnPrincipal" runat="server" Visible="true">
 		        <div class="panel panel-info">
                     <%--PANEL HEADING--%>
 			        <div class="panel-heading">
@@ -40,13 +40,16 @@
                                         <div class="col-xs-12">
                                             <div class="form-inline">
                                                 <div class="form-group">
-                                                    <asp:GridView ID="gvDatos1" runat="server" CssClass="table table-striped table-bordered table-hover input-sm" AutoGenerateColumns="False" OnRowCommand="gvDatos1_RowCommand" >
+                                                    <asp:GridView ID="gvData1" runat="server" CssClass="table table-striped table-bordered table-hover input-sm" AutoGenerateColumns="False" OnRowCommand="gvDatos1_RowCommand" >
                                                         <Columns>
-                                                            <asp:BoundField DataField="treatment_id" HeaderText="ID"  />
-                                                            <asp:BoundField DataField="name" HeaderText="Nombre" />
-                                                             <asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
+                                                            <asp:BoundField DataField="treatment_id" HeaderText="treatment_id"  />
+                                                            <asp:BoundField DataField="treatment_name" HeaderText="Tratamiento" />
+                                                            <asp:BoundField DataField="description" HeaderText="Descripción" />
+                                                            <asp:BoundField DataField="wave_id" HeaderText="wave_id"  />
+                                                            <asp:BoundField DataField="wave_name" HeaderText="Onda" />
+                                                             <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
                                                                  <ControlStyle CssClass="btn btn-sm btn-warning "/>
-                                                            </asp:ButtonField>
+                                                            </asp:ButtonField>--%>
                                                             <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="delete" Text="Ver" >
                                                                  <ControlStyle CssClass="btn btn-sm btn-danger "/>
                                                             </asp:ButtonField>--%>
@@ -66,15 +69,16 @@
                      <div class="panel-footer">
                         <div class="btn-toolbar" role="toolbar">
                             <div class="btn-group">
-                                <asp:Button ID="btnCreateNew" runat="server" CssClass="btn btn-primary" Text="Nuevo" CausesValidation="True" OnClick="btnCreateNew_Click"/>
+                                <asp:Button ID="btnCreateNewWave" runat="server" CssClass="btn btn-primary" Text="Nueva onda" CausesValidation="false" OnClick="btnCreateNewWave_Click"/>
+                                <asp:Button ID="btnCreateNewTreatment" runat="server" CssClass="btn btn-primary" Text="Nuevo tratamiento" CausesValidation="false" OnClick="btnCreateNewTreatment_Click"/>
                             </div>
                           </div>
                         </div>
 		        </div>
             </asp:Panel>    
 
-            <%--panel modify--%>
-            <asp:Panel ID="pnmodify" runat="server" Visible="false">
+            <%--panel modify wave--%>
+            <asp:Panel ID="pnmodifyWave" runat="server" Visible="false">
 		        <div class="panel panel-info">
                     <%--PANEL HEADING--%>
 			        <div class="panel-heading">                        
@@ -83,27 +87,78 @@
 			        <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
-                                 <strong><asp:Label ID="lblName" runat="server" Text="Nombre: "></asp:Label></strong>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbName" CssClass="text-danger" ErrorMessage="El campo 'Nombre' es obligatorio.">*</asp:RequiredFieldValidator>
+                                 <strong><asp:Label ID="lblWaveName" runat="server" Text="Nombre: "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbWaveName" CssClass="text-danger" ErrorMessage="El campo 'Nombre' es obligatorio.">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
                          <div class="row mb-3">
                             <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
-                                 <asp:TextBox ID="tbName" runat="server" CssClass="form-control" MaxLength="60" AutoCompleteType="Disabled"></asp:TextBox>
+                                 <asp:TextBox ID="tbWaveName" runat="server" CssClass="form-control" MaxLength="60" AutoCompleteType="Disabled"></asp:TextBox>
                             </div>
                             </div>
                          <div class="row mb-3">
-                            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-                                 <strong><asp:Label ID="lblURL" runat="server" Text="URL imagen: "></asp:Label></strong>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbUrl" CssClass="text-danger" ErrorMessage="El campo 'URL imagen' es obligatorio.">*</asp:RequiredFieldValidator>
-                                 <asp:TextBox ID="tbUrl" runat="server" CssClass="form-control" MaxLength="100" AutoCompleteType="Disabled"></asp:TextBox>
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                 <strong><asp:Label ID="lblKind" runat="server" Text="Tipo: "></asp:Label></strong>
+                                 <asp:DropDownList ID="ddlKind" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
                               </div>
                             </div>
                          <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
-                                <strong><asp:Label ID="lblTitle" runat="server" Text="Titulo de imagen: "></asp:Label></strong>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbTitle" CssClass="text-danger" ErrorMessage="El campo 'Titulo de imagen' es obligatorio.">*</asp:RequiredFieldValidator>
-                                 <asp:TextBox ID="tbTitle" runat="server" CssClass="form-control" MaxLength="60" AutoCompleteType="Disabled"></asp:TextBox>
+                                <strong><asp:Label ID="lblFrec" runat="server" Text="Frecuencia (Hz): "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbFrec" CssClass="text-danger" ErrorMessage="El campo '`Frecuencia' es obligatorio.">*</asp:RequiredFieldValidator>
+                                 <asp:TextBox ID="tbFrec" runat="server" CssClass="form-control" MaxLength="3" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox>
+                            </div>
+                       </div>
+                         <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                <strong><asp:Label ID="lblIntFrec" runat="server" Text="Frecuencia intrerna (Hz): "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbIntFrec" CssClass="text-danger" ErrorMessage="El campo 'Frecuancia interna' es obligatorio.">*</asp:RequiredFieldValidator>
+                                 <asp:TextBox ID="tbIntFrec" runat="server" CssClass="form-control" MaxLength="3" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox>
+                            </div>
+                       </div>                  
+			        </div>
+                    <%--PANEL FOOTER--%>
+			        <div class="panel-footer">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group">
+                                 <asp:Button ID="btnSaveWave" runat="server" CssClass="btn btn-primary" Text="Guardar" CausesValidation="true" OnClick="btnSaveWave_Click" Visible="false"/>
+                                <asp:Button ID="btnCreateWave" runat="server" CssClass="btn btn-primary" Text="Crear" CausesValidation="true" OnClick="btnCreateWave_Click" Visible="false"/>
+                                <asp:Button ID="btnCancelWave" runat="server" CssClass="btn btn-warning" Text="Cancelar" CausesValidation="false" OnClick="btnCancelWave_Click"/>
+                            </div>
+                          </div>
+                        </div>
+			        </div>
+            </asp:Panel>
+            <%--panel modify treatment--%>
+            <asp:Panel ID="pnModifyTreatment" runat="server" Visible="false">
+		        <div class="panel panel-info">
+                    <%--PANEL HEADING--%>
+			        <div class="panel-heading">                        
+			        </div>
+                    <%--PANEL BODY--%>
+			        <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                 <strong><asp:Label ID="lblTreatmentName" runat="server" Text="Nombre: "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbTreatmentName" CssClass="text-danger" ErrorMessage="El campo 'Nombre' es obligatorio.">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                         <div class="row mb-3">
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                 <asp:TextBox ID="tbTreatmentName" runat="server" CssClass="form-control" MaxLength="60" AutoCompleteType="Disabled"></asp:TextBox>
+                            </div>
+                            </div>
+                         <div class="row mb-3">
+                            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                                 <strong><asp:Label ID="lblDesc" runat="server" Text="Descripción: "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbDesc" CssClass="text-danger" ErrorMessage="El campo 'Descripcion' es obligatorio.">*</asp:RequiredFieldValidator>
+                                 <asp:TextBox ID="tbDesc" runat="server" CssClass="form-control" MaxLength="100" AutoCompleteType="Disabled"></asp:TextBox>
+                              </div>
+                            </div>
+                         <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                <strong><asp:Label ID="lblWave" runat="server" Text="Onda: "></asp:Label></strong>
+                                 <asp:DropDownList ID="ddlwave" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
                             </div>
                        </div>
                                            
@@ -112,9 +167,9 @@
 			        <div class="panel-footer">
                         <div class="btn-toolbar" role="toolbar">
                             <div class="btn-group">
-                                <asp:Button ID="btnSave" runat="server" CssClass="btn btn-primary" Text="Guardar" CausesValidation="True" OnClick="btnSave_Click" Visible="false"/>
-                                <asp:Button ID="btncreate" runat="server" CssClass="btn btn-primary" Text="Crear" CausesValidation="True" OnClick="btncreate_Click" Visible="false"/>
-                                <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-warning" Text="Cancelar" CausesValidation="false" OnClick="btnCancel_Click"/>
+                               <asp:Button ID="btnSaveTreatment" runat="server" CssClass="btn btn-primary" Text="Guardar" CausesValidation="True" OnClick="btnSaveTreatment_Click" Visible="false"/>
+                                <asp:Button ID="btncreateTreatment" runat="server" CssClass="btn btn-primary" Text="Crear" CausesValidation="True" OnClick="btncreateTreatment_Click" Visible="false"/>
+                                <asp:Button ID="btnCancelTreatment" runat="server" CssClass="btn btn-warning" Text="Cancelar" CausesValidation="false" OnClick="btnCancelTreatment_Click"/>
                             </div>
                           </div>
                         </div>

@@ -47,9 +47,9 @@
                                                             <asp:BoundField DataField="description" HeaderText="Descripción" />
                                                             <asp:BoundField DataField="wave_id" HeaderText="wave_id"  />
                                                             <asp:BoundField DataField="wave_name" HeaderText="Onda" />
-                                                             <asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
+                                                             <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
                                                                  <ControlStyle CssClass="btn btn-sm btn-warning "/>
-                                                            </asp:ButtonField>
+                                                            </asp:ButtonField>--%>
                                                             <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="delete" Text="Ver" >
                                                                  <ControlStyle CssClass="btn btn-sm btn-danger "/>
                                                             </asp:ButtonField>--%>

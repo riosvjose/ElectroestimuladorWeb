@@ -137,13 +137,38 @@ namespace ElectroestimuladorWeb
             }
             return ds;
         }
-
+        public DataTable SeeByName()
+        {
+            DataTable dt = new DataTable();
+            strSql = "SELECT t.*" +
+                " from treatments t" +
+                " order by t.name";
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                _message = "Database ERROR. " + e.ToString();
+            }
+            return ds;
+        }
         public DataTable SeeDetails(string injury_id)
         {
             DataTable dt = new DataTable();
             if (!string.IsNullOrEmpty(injury_id)) {
                 
-                strSql = "select t.name treatment, i.name injury, w.name wave, w.frecuency, w.internal_frec, tw.time_minutes " +
+                strSql = "select t.name treatment, t.treatment_id, i.name injury, w.name wave, w.wave_id, w.frecuency, w.internal_frec, tw.time_minutes " +
                     "from treatments t, injuries i, waves w, injury_treatment it, treatments_waves tw " +
                     "where t.treatment_id = it.treatment_id" +
                     " and i.injury_id = it.injury_id " +
@@ -173,6 +198,39 @@ namespace ElectroestimuladorWeb
                     return dt;
                 }
             }
+            return dt;
+        }
+        public DataTable SeeTreatmentInjuryDetails()
+        {
+            DataTable dt = new DataTable();
+                strSql = "select t.name treatment, t.treatment_id, i.injury_id, i.name injury, w.name wave, w.wave_id, w.frecuency, w.internal_frec, tw.time_minutes " +
+                    "from treatments t, injuries i, waves w, injury_treatment it, treatments_waves tw " +
+                    "where t.treatment_id = it.treatment_id" +
+                    " and i.injury_id = it.injury_id " +
+                    "and t.treatment_id = tw.treatment_id " +
+                    "and w.wave_id = tw.wave_id " +
+                    " order by t.name";
+                MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+                MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+                commandDatabase.CommandTimeout = 60;
+                MySqlDataReader reader;
+                MySqlDataAdapter da;
+                DataTable ds = new DataTable();
+                try
+                {
+                    databaseConnection.Open();
+                    reader = commandDatabase.ExecuteReader();
+                    da = new MySqlDataAdapter(commandDatabase);
+                    databaseConnection.Close();
+                    da.Fill(ds);
+                    return ds;
+                }
+                catch (Exception e)
+                {
+                    string error = "1";
+                    string mensaje = "Database ERROR. " + e.ToString();
+                    return dt;
+                }
             return dt;
         }
         public DataTable SeeTreatmentDetails()

@@ -112,7 +112,7 @@ namespace ElectroestimuladorWeb
         public DataTable SeeByTreatment()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT * from treatments_waves where treatment="+_treatment_id;
+            strSql = "SELECT tw.*, w.* from treatments_waves tw, waves w where tw.treatment_id="+_treatment_id+" and tw.wave_id=w.wave_id";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
