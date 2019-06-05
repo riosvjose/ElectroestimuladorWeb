@@ -19,7 +19,7 @@ namespace ElectroestimuladorWeb.Forms
         #region Procedures
         private void Load_inic(string strCon)
         {
-            if ((!string.IsNullOrEmpty(axVarSes.Lee<string>("strUserID")))&&(!string.IsNullOrEmpty(strCon)))
+            if ((!string.IsNullOrEmpty(axVarSes.Lee<string>("strUserID")))&&(!string.IsNullOrEmpty(strCon))&& (axVarSes.Lee<string>("strUserKind").Equals("1")))
             {
                 pnError.Visible = false;
                 pnOK.Visible = false;

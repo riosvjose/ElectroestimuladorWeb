@@ -35,43 +35,50 @@ namespace ElectroestimuladorWeb.Forms
             lblTitulo.Text = dtParam.Rows[0]["titulo"].ToString().Trim();
             lblPie.Text = dtParam.Rows[0]["pie"].ToString().Trim();
 
-            gvDatos1.Columns[1].Visible = true;
-            gvDatos1.Columns[3].Visible = true;
-            UserTreatments = new BD_UsersTreatments();
+            gvData1.Columns[1].Visible = true;
+            gvData1.Columns[3].Visible = true;
             UserTreatments.StrCon = axVarSes.Lee<string>("StrCon");
-            UserTreatments.UserId = 1;//Convert.ToInt32(axVarSes.Lee<string>("strProyecto"));//******
-            
+            UserTreatments.UserId = Convert.ToInt32(axVarSes.Lee<string>("strPersonId"));
+            UserTreatments.BodyPartId = Convert.ToInt32(axVarSes.Lee<string>("strBodyPartId"));
+            UserTreatments.InjuryId = Convert.ToInt32(axVarSes.Lee<string>("strInjuryId"));
+            UserTreatments.WaveId = Convert.ToInt32(axVarSes.Lee<string>("strWaveId"));
+            UserTreatments.TreatmentId = Convert.ToInt32(axVarSes.Lee<string>("strTreatmentId"));
 
-            UserTreatments = new BD_UsersTreatments();
-            gvDatos1.Visible = true;
-            gvDatos1.DataSource = UserTreatments.SeeByUser();
-            gvDatos1.Columns[1].Visible = true;
-            gvDatos1.DataBind();
-            gvDatos1.Columns[1].Visible = false;
-            for (int i = 0; i < gvDatos1.Rows.Count; i++)
+            //UserTreatments = new BD_UsersTreatments();
+            gvData1.Visible = true;
+            gvData1.DataSource = UserTreatments.SeeInjuryProgress();
+            gvData1.Columns[1].Visible = true;
+            gvData1.DataBind();
+            gvData1.Columns[1].Visible = false;
+            /*for (int i = 0; i < gvData1.Rows.Count; i++)
             {
-                if (Convert.ToDouble(gvDatos1.Rows[i].Cells[6].Text.Trim()) < 0)
+                if (Convert.ToDouble(gvData1.Rows[i].Cells[6].Text.Trim()) < 0)
                 {
-                    gvDatos1.Rows[i].Cells[6].Text = "0";
+                    gvData1.Rows[i].Cells[6].Text = "0";
                 }
-            }
-            gvDatos2.Visible = true;
+            }*/
+            /*gvDatos2.Visible = true;
             gvDatos2.DataSource = UserTreatments.SeeByUser();
-            gvDatos2.DataBind();
+            gvDatos2.DataBind();*/
         }
 
         private void CargarGrafico(string strTipoGrafico, DataTable dtDatos, DataTable dtParam)
         {
+            UserTreatments.StrCon = axVarSes.Lee<string>("StrCon");
+            UserTreatments.UserId = Convert.ToInt32(axVarSes.Lee<string>("strPersonId"));
+            UserTreatments.BodyPartId = Convert.ToInt32(axVarSes.Lee<string>("strBodyPartId"));
+            UserTreatments.InjuryId = Convert.ToInt32(axVarSes.Lee<string>("strInjuryId"));
+            UserTreatments.WaveId = Convert.ToInt32(axVarSes.Lee<string>("strWaveId"));
+            UserTreatments.TreatmentId = Convert.ToInt32(axVarSes.Lee<string>("strTreatmentId"));
+            //UserTreatments.SeeByUser();
+           // DataTable dtDatos = UserTreatments.SeeInjuryProgress();
             DataTable dt = new DataTable();
             DataRow row;
-            UserTreatments = new BD_UsersTreatments();
-            UserTreatments.StrCon = axVarSes.Lee<string>("StrCon");
-            UserTreatments.UserId = 1;// Convert.ToInt64(axVarSes.Lee<string>("strProyecto"));************
             int i, j;
             Chart2.Visible = true;
-            gvDatos2.Visible = true;
-            gvDatos2.DataSource = UserTreatments.SeeByUser();
-            gvDatos2.DataBind();
+            gvData1.Visible = true;
+            gvData1.DataSource = UserTreatments.SeeInjuryProgress();
+            gvData1.DataBind();
             try
             {
                 for (i = 1; i <= Convert.ToInt16(dtParam.Rows[0][5]); i++)
@@ -79,14 +86,14 @@ namespace ElectroestimuladorWeb.Forms
                     dt.Columns.Add("Valor" + i);
                 }
                 dt.Columns.Add("Descripcion");
-                for (i = 0; i < gvDatos2.Rows.Count; i++)
+                for (i = 0; i < gvData1.Rows.Count; i++)
                 {
                     row = dt.NewRow();
                     for (j = 1; j <= Convert.ToInt16(dtParam.Rows[0][5]); j++)
                     {
-                        row["Valor" + j] = gvDatos2.Rows[i].Cells[j + 2].Text; // j+2
+                        row["Valor" + j] = gvData1.Rows[i].Cells[j + 3].Text; // j+3 columna de intensidad
                     }
-                    row["Descripcion"] = Server.HtmlDecode(gvDatos2.Rows[i].Cells[2].Text);
+                    row["Descripcion"] = Server.HtmlDecode(gvData1.Rows[i].Cells[2].Text);
                     dt.Rows.Add(row);
                 }
                 Chart2.DataSource = dt;
@@ -193,7 +200,7 @@ namespace ElectroestimuladorWeb.Forms
                 for (i = 1; i <= Convert.ToInt16(dtParam.Rows[0][5]); i++)
                 {
                     Chart2.Series["Series" + i].IsVisibleInLegend = true;
-                    Chart2.Series["Series" + i].LegendText = gvDatos2.Columns[i + 2].HeaderText; //i+2
+                    Chart2.Series["Series" + i].LegendText = gvData1.Columns[i + 2].HeaderText; //i+2
                 }
                 Chart2.DataBind();
             }
@@ -208,7 +215,8 @@ namespace ElectroestimuladorWeb.Forms
         {
             if (!string.IsNullOrEmpty(axVarSes.Lee<string>("strUserID")))
             {
-        
+                CargarDatosGrafica();
+                pnPrincipal.Visible = true;
             }
             else
             {
@@ -225,7 +233,7 @@ namespace ElectroestimuladorWeb.Forms
             UserTreatments.WaveId = Convert.ToInt32(axVarSes.Lee<string>("strWaveId"));
             UserTreatments.TreatmentId = Convert.ToInt32(axVarSes.Lee<string>("strTreatmentId"));
             //UserTreatments.SeeByUser();
-            DataTable dtDatos = UserTreatments.SeeByUser();
+            DataTable dtDatos = UserTreatments.SeeInjuryProgress();
             DataTable dtParam = new DataTable();
             dtParam.Columns.Add("titulo", Type.GetType("System.String"));
             dtParam.Columns.Add("subtitulo", Type.GetType("System.String"));
@@ -239,12 +247,12 @@ namespace ElectroestimuladorWeb.Forms
             dtParam.Columns.Add("grafico", Type.GetType("System.String"));
             DataRow rwFila;
             rwFila = dtParam.NewRow();
-            rwFila["titulo"] = "titulo";// UserTreatments.Nombre.Trim();
+            rwFila["titulo"] = "" ;// UserTreatments.Nombre.Trim();
             rwFila["subtitulo"] = "lesion";// UserTreatments..Trim();
-            //rwFila["fecha"] = libOracleBD.Revisar_Fecha_Servidor();
-            rwFila["subtituloy"] = "% avance";
+            rwFila["fecha"] = "";
+            rwFila["subtituloy"] = "Evolución respecto a la intensidad del estímulo";
             rwFila["subtitulox"] = "Fecha";
-            rwFila["nro_columnas"] = "2";
+            rwFila["nro_columnas"] = "1";
             rwFila["pie"] = "";
             rwFila["grafico"] = "11";
             rwFila["total_fila"] = 0;
@@ -252,9 +260,9 @@ namespace ElectroestimuladorWeb.Forms
             dtParam.Rows.Add(rwFila);
             //webForms.Cargar_Dominio("CHART_TYPE", strCon, ref ddlTipoGrafico);
             CargarDatos(dtDatos, dtParam);
-            CargarGrafico(ddlTipoGrafico.SelectedValue, UserTreatments.SeeByUser(), dtParam);
+            CargarGrafico(0.ToString(), UserTreatments.SeeInjuryProgress(), dtParam);
         }
-        public void DefinirColumnas(int intNumColumnas)
+        /*public void DefinirColumnas(int intNumColumnas)
         {
             dtParam.Columns.Add("titulo", Type.GetType("System.String"));
             dtParam.Columns.Add("subtitulo", Type.GetType("System.String"));
@@ -269,20 +277,20 @@ namespace ElectroestimuladorWeb.Forms
             dtDatos.Columns.Add("secuencia", Type.GetType("System.String"));
             dtDatos.Columns.Add("detalle", Type.GetType("System.String"));
             dtDatos.Columns.Add("resumido", Type.GetType("System.String"));
-        }
+        }*/
         #endregion
 
         #region "Events"
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (axVarSes.Lee<string>("StrCon") == "" || axVarSes.Lee<string>("StrCon") == null)
+            if (string.IsNullOrEmpty(axVarSes.Lee<string>("strUserID")))
             {
                 Response.Redirect("~/Default.aspx");
             }
             if (!Page.IsPostBack)
             {
-                if ((axVarSes.Lee<string>("StrCon") != "") || (axVarSes.Lee<string>("strProyecto") != ""))
+                if (!string.IsNullOrEmpty(axVarSes.Lee<string>("strUserID")))
                 {
                     CargarDatosIniciales(axVarSes.Lee<string>("StrCon"));
                 }
@@ -297,7 +305,7 @@ namespace ElectroestimuladorWeb.Forms
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("STRS_PROY_REP_Proyectos.aspx");
+            Response.Redirect("UserInjuries.aspx");
         }
         protected void ddlTipoGrafico_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -306,14 +314,14 @@ namespace ElectroestimuladorWeb.Forms
 
         protected void gvDatos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            axVarSes.Escribe("strEvento", gvDatos1.SelectedRow.Cells[1].Text.Trim());
-            Response.Redirect("STRS_PROY_REP_Personas.aspx");
+            
         }
         #endregion
 
         protected void btnSearDates_Click(object sender, EventArgs e)
         {
-
+            CargarDatosGrafica();
+            pnPrincipal.Visible = true;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

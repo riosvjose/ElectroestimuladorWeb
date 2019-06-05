@@ -35,6 +35,7 @@ namespace ElectroestimuladorWeb
             Session["strPassword"] = "";
             Session["strUserID"] = "";
             Session["strUser"] = "";
+            Session["strUserKind"] = "";
 
             //Procedures data
             Session["strBodyPartId"] = "";
@@ -43,6 +44,7 @@ namespace ElectroestimuladorWeb
             Session["strWaveId"] = "";
             Session["strTreatmentId"] = "";
             Session["strImageId"] = "";
+            Session["ErrorCounter"] = "0";
         }
     }
 }

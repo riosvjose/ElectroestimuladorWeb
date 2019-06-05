@@ -29,7 +29,7 @@
 		        <div class="panel panel-info">
                     <%--PANEL HEADING--%>
 			        <div class="panel-heading">
-                        <h3> <strong><asp:Label ID="lblBodyTreatments" runat="server" Text="Partes del cuerpo"></asp:Label></strong></h3>
+                        <h3> <strong><asp:Label ID="lblTreatments" runat="server" Text="Tratamientos"></asp:Label></strong></h3>
 			        </div>
                     <%--PANEL BODY--%>
 			        <div class="panel-body">
@@ -47,6 +47,7 @@
                                                             <asp:BoundField DataField="description" HeaderText="Descripción" />
                                                             <asp:BoundField DataField="wave_id" HeaderText="wave_id"  />
                                                             <asp:BoundField DataField="wave_name" HeaderText="Onda" />
+                                                            <asp:BoundField DataField="time_minutes" HeaderText="Tiempo (minutos)" />
                                                              <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
                                                                  <ControlStyle CssClass="btn btn-sm btn-warning "/>
                                                             </asp:ButtonField>--%>
@@ -153,6 +154,13 @@
                                  <strong><asp:Label ID="lblDesc" runat="server" Text="Descripción: "></asp:Label></strong>
                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbDesc" CssClass="text-danger" ErrorMessage="El campo 'Descripcion' es obligatorio.">*</asp:RequiredFieldValidator>
                                  <asp:TextBox ID="tbDesc" runat="server" CssClass="form-control" MaxLength="100" AutoCompleteType="Disabled"></asp:TextBox>
+                              </div>
+                            </div>
+                        <div class="row mb-3">
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                                 <strong><asp:Label ID="lblTime" runat="server" Text="Tiempo (minutos): "></asp:Label></strong>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="tbTime" CssClass="text-danger" ErrorMessage="El campo 'Tiempo' es obligatorio.">*</asp:RequiredFieldValidator>
+                                 <asp:TextBox ID="tbTime" runat="server" CssClass="form-control" MaxLength="3" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox>
                               </div>
                             </div>
                          <div class="row">

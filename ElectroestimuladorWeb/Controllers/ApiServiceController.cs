@@ -27,36 +27,6 @@ namespace ElectroestimuladorWeb
         Functions Funciones = new Functions();
         #endregion
 
-        [HttpPost]
-        [Route("SignIn")]
-        public string SignIn([FromBody]ApiService ias)
-        {
-            DB_Users USER = new DB_Users();
-            USER.StrCon = strCon;
-            DataTable dt2 = USER.login(ias.usr, ias.pwd);
-            DataTable dt = new DataTable();
-            JObject obj = new JObject();
-            DB_Users user = new DB_Users();
-            string error = "0";
-            string msg = string.Empty, aux = string.Empty, resp = string.Empty;
-            if (dt2.Rows.Count > 0)
-            {
-                dt = dt2;
-                DataRow dr = dt.Rows[0];
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    aux += dt.Columns[i].ColumnName + tokenAsign + dr[i].ToString() + token;
-                }
-            }
-            else
-            {
-                error = "1";
-                msg = USER.Message;
-            }
-            resp = ";Error" + tokenAsign + error + token + "Message" + tokenAsign + msg + token + aux;
-            return resp;
-        }
-
          [HttpPost]
          [Route("SignIn2")]
          public DataTable SignIn2([FromBody]ApiService ias)
@@ -86,30 +56,7 @@ namespace ElectroestimuladorWeb
              return dt2;
          }
 
-        [HttpPost]
-        [Route("userRegistration")]
-        public DataTable userRegistration([FromBody]ApiService ias)
-        {
-            DB_Users USER = new DB_Users();
-            USER.StrCon = strCon;
-            JArray jsonUser = ias.jsonUsuario;
-            foreach (JObject jsonOp in jsonUser.Children<JObject>())
-            {
-                USER.UserAccount = jsonOp["email"].ToString();
-                USER.FirstName = jsonOp["first_name"].ToString();
-                USER.LastName = jsonOp["last_name"].ToString();
-                USER.Phone = jsonOp["phone"].ToString();
-                USER.Email = jsonOp["email"].ToString();
-                USER.BirthDate = jsonOp["birthdate"].ToString();
-            }
-            DataTable dt2 = new DataTable();
-            dt2.Clear();
-            dt2.Columns.Add("error");
-            dt2.Columns.Add("mensaje");
-            DataRow row = dt2.NewRow();
-            dt2.Rows.Add(row);
-            return dt2;
-        }
+        
 
         [HttpPost]
         [Route("ListBody")]
@@ -167,5 +114,58 @@ namespace ElectroestimuladorWeb
             return UserTreatment.Insert();
         }
 
+        //[HttpPost]
+        //[Route("SignIn")]
+        //public string SignIn([FromBody]ApiService ias)
+        //{
+        //    DB_Users USER = new DB_Users();
+        //    USER.StrCon = strCon;
+        //    DataTable dt2 = USER.login(ias.usr, ias.pwd);
+        //    DataTable dt = new DataTable();
+        //    JObject obj = new JObject();
+        //    DB_Users user = new DB_Users();
+        //    string error = "0";
+        //    string msg = string.Empty, aux = string.Empty, resp = string.Empty;
+        //    if (dt2.Rows.Count > 0)
+        //    {
+        //        dt = dt2;
+        //        DataRow dr = dt.Rows[0];
+        //        for (int i = 0; i < dt.Columns.Count; i++)
+        //        {
+        //            aux += dt.Columns[i].ColumnName + tokenAsign + dr[i].ToString() + token;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        error = "1";
+        //        msg = USER.Message;
+        //    }
+        //    resp = ";Error" + tokenAsign + error + token + "Message" + tokenAsign + msg + token + aux;
+        //    return resp;
+        //}
+        //[HttpPost]
+        //[Route("userRegistration")]
+        //public DataTable userRegistration([FromBody]ApiService ias)
+        //{
+        //    DB_Users USER = new DB_Users();
+        //    USER.StrCon = strCon;
+        //    JArray jsonUser = ias.jsonUsuario;
+        //    foreach (JObject jsonOp in jsonUser.Children<JObject>())
+        //    {
+        //        USER.UserAccount = jsonOp["email"].ToString();
+        //        USER.FirstName = jsonOp["first_name"].ToString();
+        //        USER.LastName = jsonOp["last_name"].ToString();
+        //        USER.Phone = jsonOp["phone"].ToString();
+        //        USER.Email = jsonOp["email"].ToString();
+        //        USER.BirthDate = jsonOp["birthdate"].ToString();
+        //    }
+        //    DataTable dt2 = new DataTable();
+        //    dt2.Clear();
+        //    dt2.Columns.Add("error");
+        //    dt2.Columns.Add("mensaje");
+        //    DataRow row = dt2.NewRow();
+        //    dt2.Rows.Add(row);
+        //    return dt2;
+        //}
     }
 }

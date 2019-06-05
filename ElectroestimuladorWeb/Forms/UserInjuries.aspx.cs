@@ -75,16 +75,10 @@ namespace ElectroestimuladorWeb.Forms
             
 
         } 
-        protected void rbIngreso_Click(object sender, EventArgs e)
+        protected void btnVolver_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("SearchUsers.aspx");
         }
-
-        protected void rbSalida_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         #endregion
 
     }

@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="row">
+  <%--     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="text-center">
 
@@ -40,7 +40,6 @@
                             </div>
                         </div>
                         <div class="gwt-Label ASR5DCB-v-q ASR5DCB-v-s quantumMediumText">Partes del cuerpo</div>
-                       <%-- <div class="gwt-Label ASR5DCB-v-d quantumFadedDescriptionText ASR5DCB-v-e" style="width:200px;">Registre su salida y retorno.</div>--%>
                     </asp:Panel>
                 </asp:LinkButton>
             </div>
@@ -50,7 +49,7 @@
                 <br />
             </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="text-center">
                 <asp:LinkButton ID="lbHistClinica" runat="server" OnClick="lbHistClinica_Click">
                     <asp:Panel ID="pnHistClinica" runat="server" CssClass="panel-dashboard" role="button" style="margin:0; padding:0;">
@@ -60,7 +59,6 @@
                             </div>
                         </div>
                         <div class="gwt-Label ASR5DCB-v-q ASR5DCB-v-s quantumMediumText" style="width:200px;">Historia clínica paciente</div>
-                        <%--<div class="gwt-Label ASR5DCB-v-d quantumFadedDescriptionText ASR5DCB-v-e" style="width:200px;">Registre sus tareas.</div>--%>
                     </asp:Panel>
                 </asp:LinkButton>
             </div>
@@ -80,11 +78,10 @@
                             </div>
                         </div>
                         <div class="gwt-Label ASR5DCB-v-q ASR5DCB-v-s quantumMediumText" style="width:200px;">Tratamientos</div>
-                        <%--<div class="gwt-Label ASR5DCB-v-d quantumFadedDescriptionText ASR5DCB-v-e" style="width:200px;">Registre sus tareas.</div>--%>
                     </asp:Panel>
                 </asp:LinkButton>
             </div>
-        </div>
+        </div>--%>
         <div class="visible-xs">
             <div class="col-xs-12">
                 <br />
@@ -103,19 +100,6 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <%--<div class="text-center">
-                <asp:LinkButton ID="lbRepTratamientos" runat="server" OnClick="lbProyectos_Click">
-                    <asp:Panel ID="pnProyectos" runat="server" CssClass="panel-dashboard" role="button" style="margin:0; padding:0;">
-                        <div class="hidden-xs">
-                            <div class="ASR5DCB-v-l ASR5DCB-v-n">
-                                <asp:Image ID="imgRepTratamientos" CssClass="ASR5DCB-d-Vc" ImageUrl="~/Img/documentos_medicos.png" Width="70px" Height="70px" runat="server" />
-                            </div>
-                        </div>
-                        <div class="gwt-Label ASR5DCB-v-q ASR5DCB-v-s quantumMediumText" style="width:200px;">Proyectos</div>
-                        <div class="gwt-Label ASR5DCB-v-d quantumFadedDescriptionText ASR5DCB-v-e" style="width:200px;">Registre sus proyectos y actividades.</div>
-                    </asp:Panel>
-                </asp:LinkButton>
-            </div>--%>
         </div>
         <div class="visible-xs">
             <div class="col-xs-12">

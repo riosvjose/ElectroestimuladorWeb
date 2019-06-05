@@ -44,9 +44,11 @@ namespace ElectroestimuladorWeb.Forms
             pnError.Visible = false;
             pnOK.Visible = false;
             libUser.StrCon = axVarSes.Lee<string>("strCon");
+            gvData1.Columns[0].Visible = true;
             gvData1.Visible = true;
             gvData1.DataSource=libUser.Search(tbSearch.Text);
             gvData1.DataBind();
+            gvData1.Columns[0].Visible = false;
             if (gvData1.Rows.Count > 0)
             {
                 pnFindedUsers.Visible = true;

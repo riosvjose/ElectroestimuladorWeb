@@ -24,14 +24,12 @@ namespace ElectroestimuladorWeb.Forms
             }
             else
             {
-                //if (AccesoObjeto.Contains("ALM_ALM_AdministrarAlmacenes_permitir_acceso"))
-                //{
-                //    sbAdminAlmacenes.Visible = true;
-                //    sbUsuarios.Visible = true;
-                //}
-
-                //if (AccesoObjeto.Contains("ALM_ITEM_AdministrarItems_permitir_acceso"))
-                //    sbAdminItems.Visible = true;
+                if (axVarSes.Lee<string>("strUserKind").Equals("1"))
+                {
+                    sbInjuries.Visible = true;
+                    sbTreatments.Visible = true;
+                    sbBodyParts.Visible = true;
+                  }
 
             }
             if (Request.UserAgent.IndexOf("AppleWebKit") > 0)

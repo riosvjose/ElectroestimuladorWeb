@@ -51,16 +51,30 @@ namespace ElectroestimuladorWeb
             if (dt.Rows.Count > 0)
             {
                 DataRow dr = dt.Rows[0];
-                axVarSes.Escribe("strUser", dr["first_name"] +" "+ dr["last_name"]);
-                axVarSes.Escribe("strUserAccount", dr["user_account"].ToString());
-                axVarSes.Escribe("strPassword", dr["passwd"].ToString());
-                axVarSes.Escribe("strUserID", dr["user_id"].ToString());
-                Response.Redirect("~/Forms/Index.aspx");
+                
+                
+                LibUser.UserId=Convert.ToInt32(dr["user_id"].ToString());
+                if (Convert.ToInt32(axVarSes.Lee<string>("ErrorCounter"))>=3)
+                {
+                    LibUser.LockAccount();
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "Cuenta de usuario bloqueada.";
+                }
+                else
+                {
+                    axVarSes.Escribe("strUser", dr["first_name"] + " " + dr["last_name"]);
+                    axVarSes.Escribe("strUserAccount", dr["user_account"].ToString());
+                    axVarSes.Escribe("strPassword", dr["passwd"].ToString());
+                    axVarSes.Escribe("strUserID", dr["user_id"].ToString());
+                    axVarSes.Escribe("strUserKind", dr["kind"].ToString());
+                    Response.Redirect("~/Forms/Index.aspx");
+                }
             }
             else
             {
                 lblMensaje.Visible = true;
                 lblMensaje.Text = LibUser.Message;
+                axVarSes.Escribe("ErrorCounter", (Convert.ToInt16(axVarSes.Lee<string>("ErrorCounter"))+1).ToString());
             }
         }
 

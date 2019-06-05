@@ -49,12 +49,10 @@
                                                             <asp:BoundField DataField="wave_id" HeaderText="wave_id" />
                                                             <asp:BoundField DataField="wave" HeaderText="Onda" />
                                                             <asp:BoundField DataField="time_minutes" HeaderText="Tiempo (minutos)" />
-                                                             <asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
+                                                             <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="modify" Text="Modificar" >
                                                                  <ControlStyle CssClass="btn btn-sm btn-warning "/>
-                                                            </asp:ButtonField>
-                                                            <%--<asp:ButtonField HeaderText="" ButtonType="Button" CommandName="delete" Text="Ver" >
-                                                                 <ControlStyle CssClass="btn btn-sm btn-danger "/>
                                                             </asp:ButtonField>--%>
+                                                            
                                                         </Columns>
                                                         <PagerStyle CssClass="GridPager" Wrap="True" />
                                                         <SelectedRowStyle BackColor="#008A8C" ForeColor="White" />

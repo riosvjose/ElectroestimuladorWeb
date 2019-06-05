@@ -145,30 +145,24 @@ namespace ElectroestimuladorWeb
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
                 da.Fill(ds);
-                return ds;
+                
             }
             catch (Exception e)
             {
-                string error = "1";
-                string mensaje = "Database ERROR. " + e.ToString();
-                DataTable dt2 = new DataTable();
-                dt2.Clear();
-                dt2.Columns.Add("error");
-                dt2.Columns.Add("mensaje");
-                DataRow row = dt2.NewRow();
-                row["error"] = error;
-                row["mensaje"] = mensaje;
-                dt2.Rows.Add(row);
-                return dt2;
+                _message = "Database ERROR. " + e.ToString();
             }
-           
+            return ds;
         }
-        public DataTable SeeByProgress()
+        public DataTable SeeInjuryProgress()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT ut.*, i.name as injury, w.name as wave, t.name as treatment " +
+            strSql = "SELECT ut.*, i.name as injury, w.name as wave, t.name as treatment , DATE_FORMAT(ut.updated_at, 'dd/mm/yyyy') as date" +
                 " from users_treatments ut, injuries i, treatments t, treatments_waves tw, waves w, body_parts b, users u" +
                 " where ut.user_id=" + _user_id +
+                " and ut.injury_id="+_injury_id+
+                " and ut.wave_id="+_wave_id+
+                " and ut.treatment_id="+_treatment_id+
+                " and ut.body_part_id="+_body_part_id+
                 " and ut.user_id=u.user_id" +
                 " and ut.treatment_id=t.treatment_id" +
                 " and t.treatment_id=tw.treatment_id" +
@@ -176,8 +170,7 @@ namespace ElectroestimuladorWeb
                 " and ut.wave_id=tw.wave_id " +
                 " and ut.injury_id=i.injury_id" +
                 " and b.body_part_id=ut.body_part_id" +
-                " group by i.injury_id, i.name, t.treatment_id, t.name, w.name, w.wave_id, b.body_part_id, b.name " +
-                " order by max(ut.updated_at)";
+                " order by ut.updated_at";
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
             MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -191,23 +184,12 @@ namespace ElectroestimuladorWeb
                 da = new MySqlDataAdapter(commandDatabase);
                 databaseConnection.Close();
                 da.Fill(ds);
-                return ds;
             }
             catch (Exception e)
             {
-                string error = "1";
-                string mensaje = "Database ERROR. " + e.ToString();
-                DataTable dt2 = new DataTable();
-                dt2.Clear();
-                dt2.Columns.Add("error");
-                dt2.Columns.Add("mensaje");
-                DataRow row = dt2.NewRow();
-                row["error"] = error;
-                row["mensaje"] = mensaje;
-                dt2.Rows.Add(row);
-                return dt2;
+                _message = "Database ERROR. " + e.ToString();
             }
-
+            return ds;
         }
         #endregion
     }

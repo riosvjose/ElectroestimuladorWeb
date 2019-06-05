@@ -67,7 +67,7 @@
                                         <div class="col-xs-12">
                                             <div class="form-inline">
                                                 <div class="form-group">
-                                                    <asp:GridView ID="gvDatos1" runat="server" CssClass="table table-striped table-bordered table-hover input-sm" AutoGenerateColumns="False" OnRowCommand="gvDatos1_RowCommand" >
+                                                    <asp:GridView ID="gvData1" runat="server" CssClass="table table-striped table-bordered table-hover input-sm" AutoGenerateColumns="False" OnRowCommand="gvDatos1_RowCommand" >
                                                         <Columns>
                                                             <asp:BoundField DataField="user_id" HeaderText="ID"  />
                                                             <asp:BoundField DataField="last_name" HeaderText="Apellidos" />

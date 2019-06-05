@@ -191,6 +191,7 @@ namespace ElectroestimuladorWeb
             pwd = Funciones.getMd5Hash(pwd);
             strSql = " select u.*, p.passwd from users u, user_passwords p " +
                      "where u.user_account='" +usr + "'" +
+                     " and active=1"+
                      " and u.user_id=p.user_id" +
                      " and p.pwd_status=1" +
                      " and p.passwd='" + pwd + "'";
@@ -211,6 +212,7 @@ namespace ElectroestimuladorWeb
                 if (ds.Rows.Count < 1)
                 {
                     _message = "Verifique su usuario y/o Contraseña.";
+                    
                 }
                 else
                 {
@@ -228,11 +230,11 @@ namespace ElectroestimuladorWeb
             DataTable dt = new DataTable();
             paramet = Funciones.EliminarCaracteresEspeciales(paramet);
             strSql = " select u.* from users u " +
-                     "where (u.email='" + paramet + "'" +
-                     " or u.last_name='" + paramet+"'"+
-                     " or u.first_name='" + paramet + "'" +
-                     " or concat (u.last_name, '', u.first_name) = '" + paramet +"'"+
-                     " or concat (u.first_name, '', u.last_name) = '" + paramet+"')" +
+                     "where (u.email like'%" + paramet + "%'" +
+                     " or u.last_name like '%" + paramet+"%'"+
+                     " or u.first_name like '%" + paramet + "%'" +
+                     " or concat (u.last_name, '', u.first_name) like '%" + paramet +"%'"+
+                     " or concat (u.first_name, '', u.last_name) like '%" + paramet+"%')" +
                      " order by u.last_name, u.first_name";
 
             MySqlConnection databaseConnection = new MySqlConnection(StrCon);
@@ -279,6 +281,81 @@ namespace ElectroestimuladorWeb
                 _message = "Database ERROR. " + e.ToString();
             }
             return ds;
+        }
+        public DataTable SearchUser()
+        {
+            DataTable dt = new DataTable();
+            strSql = "select * from users where user_account ='" + _user_account + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                _message = "Database ERROR. " + e.ToString();
+            }
+            return ds;
+        }
+
+        public bool ActivateAccount()
+        {
+            bool bldone = false;
+            DataTable dt = new DataTable();
+            strSql = "update users set active=1 where user_id =" + _user_id;
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                bldone = true;
+            }
+            catch (Exception e)
+            {
+                _message = "Database ERROR. " + e.ToString();
+            }
+            return bldone;
+        }
+        public bool LockAccount()
+        {
+            bool bldone = false;
+            DataTable dt = new DataTable();
+            strSql = "update users set active=2 where user_id =" + _user_id;
+            MySqlConnection databaseConnection = new MySqlConnection(StrCon);
+            MySqlCommand commandDatabase = new MySqlCommand(strSql, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            MySqlDataAdapter da;
+            DataTable ds = new DataTable();
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                da = new MySqlDataAdapter(commandDatabase);
+                databaseConnection.Close();
+                bldone = true;
+            }
+            catch (Exception e)
+            {
+                _message = "Database ERROR. " + e.ToString();
+            }
+            return bldone;
         }
         #endregion
     }
