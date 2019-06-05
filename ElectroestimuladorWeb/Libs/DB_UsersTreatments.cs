@@ -156,7 +156,7 @@ namespace ElectroestimuladorWeb
         public DataTable SeeInjuryProgress()
         {
             DataTable dt = new DataTable();
-            strSql = "SELECT ut.*, i.name as injury, w.name as wave, t.name as treatment , DATE_FORMAT(ut.updated_at, 'dd/mm/yyyy') as date" +
+            strSql = "SELECT ut.*, i.name as injury, w.name as wave, t.name as treatment, DATE_FORMAT(ut.updated_at, '%d-%m-%Y') as date" +
                 " from users_treatments ut, injuries i, treatments t, treatments_waves tw, waves w, body_parts b, users u" +
                 " where ut.user_id=" + _user_id +
                 " and ut.injury_id="+_injury_id+

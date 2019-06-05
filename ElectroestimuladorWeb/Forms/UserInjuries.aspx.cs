@@ -62,7 +62,8 @@ namespace ElectroestimuladorWeb.Forms
                 axVarSes.Escribe("strInjuryId", gvData1.Rows[indice].Cells[0].Text.ToString());
                 axVarSes.Escribe("strWaveId", gvData1.Rows[indice].Cells[6].Text.ToString());
                 axVarSes.Escribe("strTreatmentId", gvData1.Rows[indice].Cells[4].Text.ToString());
-                Response.Redirect("Results.aspx");
+                //Response.Redirect("Results.aspx");
+                Response.Redirect("InjuryProgress.aspx");
             }
             if (blOpCorrecta)
             {

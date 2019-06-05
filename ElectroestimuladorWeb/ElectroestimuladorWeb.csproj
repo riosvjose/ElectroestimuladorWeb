@@ -178,8 +178,6 @@
     <Content Include="Forms\RegisterForm.aspx" />
     <Content Include="Forms\ListTreatments.aspx" />
     <Content Include="Forms\ListBody.aspx" />
-    <Content Include="Forms\Results.aspx" />
-    <Content Include="Forms\SACAD_ESTAD_Resultado.aspx" />
     <Content Include="Forms\InjuryProgress.aspx" />
     <Content Include="Forms\UserInjuries.aspx" />
     <Content Include="Forms\SearchUsers.aspx" />
@@ -326,20 +324,6 @@
     </Compile>
     <Compile Include="Forms\RecoverAccountForm.aspx.designer.cs">
       <DependentUpon>RecoverAccountForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Results.aspx.cs">
-      <DependentUpon>Results.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Forms\Results.aspx.designer.cs">
-      <DependentUpon>Results.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SACAD_ESTAD_Resultado.aspx.cs">
-      <DependentUpon>SACAD_ESTAD_Resultado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Forms\SACAD_ESTAD_Resultado.aspx.designer.cs">
-      <DependentUpon>SACAD_ESTAD_Resultado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\InjuryProgress.aspx.cs">
       <DependentUpon>InjuryProgress.aspx</DependentUpon>
