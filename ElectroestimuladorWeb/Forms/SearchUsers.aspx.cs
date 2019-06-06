@@ -71,6 +71,7 @@ namespace ElectroestimuladorWeb.Forms
             if (e.CommandName == "ver")
             {
                 axVarSes.Escribe("strPersonId", gvData1.Rows[indice].Cells[0].Text.ToString());
+                axVarSes.Escribe("strPerson", gvData1.Rows[indice].Cells[1].Text.ToString()+" "+ gvData1.Rows[indice].Cells[2].Text.ToString());
                 Response.Redirect("UserInjuries.aspx");
             }
             if (blOpCorrecta)

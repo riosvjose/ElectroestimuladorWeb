@@ -67,24 +67,6 @@ namespace ElectroestimuladorWeb.Forms {
         protected global::System.Web.UI.WebControls.GridView gvDatos1;
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// ddlTipoGrafico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoGrafico;
-        
-        /// <summary>
         /// Chart2 control.
         /// </summary>
         /// <remarks>
@@ -101,15 +83,6 @@ namespace ElectroestimuladorWeb.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPie;
-        
-        /// <summary>
-        /// btnRechazar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRechazar;
         
         /// <summary>
         /// btnVolver control.

@@ -122,7 +122,7 @@
                         <div class="btn-toolbar" role="toolbar">
                             <div class="btn-group">
                                  <asp:Button ID="btnSaveInjury" runat="server" CssClass="btn btn-primary" Text="Guardar" CausesValidation="True" OnClick="btnSavInjury_Click" Visible="false"/>
-                                <asp:Button ID="btnCreateInjury" runat="server" CssClass="btn btn-primary" Text="Crear" CausesValidation="True" OnClick="btnCreateInjury_Click1" Visible="false"/>
+                                <asp:Button ID="btnCreateInjury" runat="server" CssClass="btn btn-primary" Text="Crear" CausesValidation="True" OnClick="btnCreateInjury1_Click" Visible="false"/>
                                 <asp:Button ID="btnCancelInjury" runat="server" CssClass="btn btn-warning" Text="Cancelar" CausesValidation="false" OnClick="btnCancelInjury_Click1"/>
                             </div>
                           </div>

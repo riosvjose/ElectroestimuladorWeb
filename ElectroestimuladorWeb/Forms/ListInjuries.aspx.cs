@@ -93,8 +93,10 @@ namespace ElectroestimuladorWeb.Forms
             pnPrincipal.Visible = true;
         }
 
-        protected void btnCreateInjury_Click(object sender, EventArgs e)
+        protected void btnCreateInjury1_Click(object sender, EventArgs e)
         {
+            pnOK.Visible = false;
+            pnError.Visible = false;
             try
             {
                 DB_Injuries Injury = new DB_Injuries();
@@ -102,24 +104,26 @@ namespace ElectroestimuladorWeb.Forms
                 Injury.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
                 Injury.Name = tbInjuryName.Text;
                 Injury.Description = tbInjuryDesc.Text;
-                /*
+                
                 if (Injury.Insert())
                 {
-                    //DataTable dt = Injury.SeeIdByParams();
-                    if (dt.Rows.Count>0)
+                    Injury.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
+                    if (!string.IsNullOrEmpty(Injury.obtenerID()))
                     {
-                        DataRow dr = dt.Rows[0];
-                        BD_TreatmentsWaves treatmentWaves = new BD_TreatmentsWaves();
+                        
+                        DB_TreatmentsInjuries treatmentWaves = new DB_TreatmentsInjuries();
                         treatmentWaves.StrCon = axVarSes.Lee<string>("strCon");
                         treatmentWaves.UpdatedBy = Convert.ToInt32(axVarSes.Lee<string>("strUserID"));
-                        treatmentWaves.TreatmentId = Convert.ToInt32(dr["treatment_id"].ToString());
+                        treatmentWaves.TreatmentId = Convert.ToInt32(ddlTreatment.SelectedValue);
                         treatmentWaves.WaveId = Convert.ToInt32(ddlWave.SelectedValue);
+                        treatmentWaves.InjuryId = Convert.ToInt32(Injury.obtenerID());
                         if (treatmentWaves.Insert())
                         {
                             lblOK.Text = "Datos actualizados satisfactoriamente.";
+                            pnOK.Visible = true;
                             pnPrincipal.Visible = true;
                             pnModifyInjury.Visible = false;
-                            cargarGrid();
+                            LoadGrid();
                         }
                         else
                         {
@@ -131,8 +135,8 @@ namespace ElectroestimuladorWeb.Forms
                 else
                 {
                     pnError.Visible = true;
-                    lblError.Text = "No se pudieron insertar los datos. " + treatment.Message;
-                }*/
+                    lblError.Text = "No se pudieron insertar los datos. " + Injury.Message;
+                }
             }
             catch (Exception ex)
             {

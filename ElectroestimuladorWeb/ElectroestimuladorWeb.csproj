@@ -402,6 +402,7 @@
     <Compile Include="Libs\DB_Domains.cs" />
     <Compile Include="Libs\DB_Images.cs" />
     <Compile Include="Libs\DB_BodyParts.cs" />
+    <Compile Include="Libs\DB_TreatmentInjuries.cs" />
     <Compile Include="Libs\DB_UsersInjuries.cs" />
     <Compile Include="Libs\DB_Injuries.cs" />
     <Compile Include="Libs\DB_Waves.cs" />

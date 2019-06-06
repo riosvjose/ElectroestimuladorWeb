@@ -28,10 +28,14 @@
                         <div class="row">
                             <br />
                             <div class="form-horizontal">
-                                <div class="col-xs-12 text-center">
-                                   <%--<h1>Bienvenido</h1>--%>
+                                <div class="col-xs-12">
                                     <div class="text-right">
                                         <h3><a style="color:#0e0e38;" href="../Forms/RegisterForm.aspx">Registrarse</a></h3>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="text-right">
+                                        <h5><a style="color:#0e0e38;" href="../Forms/RecoverAccountForm.aspx">Recuperar cuenta</a></h5>
                                     </div>
                                 </div>
                             </div>

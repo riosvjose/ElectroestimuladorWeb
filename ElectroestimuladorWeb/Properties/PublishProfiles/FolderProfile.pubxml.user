@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AjaxControlToolkit.dll">
-      <publishTime>08/07/2018 18:16:00</publishTime>
+      <publishTime>07/08/2018 18:16:00</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>04/20/2019 10:15:50</publishTime>
@@ -28,121 +28,121 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/31/2019 22:11:36</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ElectroestimuladorWeb.dll">
-      <publishTime>06/05/2019 03:25:48</publishTime>
+      <publishTime>06/06/2019 00:37:18</publishTime>
     </File>
     <File Include="bin/ElectroestimuladorWeb.pdb">
-      <publishTime>06/05/2019 03:25:48</publishTime>
+      <publishTime>06/06/2019 00:37:18</publishTime>
     </File>
     <File Include="bin/EnvDTE.dll">
       <publishTime>03/23/2019 11:21:10</publishTime>
     </File>
     <File Include="bin/es/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/es/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/es/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/es/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/es/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/es/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/it/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/it/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/it/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/it/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/it/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/it/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ja/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ja/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ja/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ja/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ja/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ja/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ko/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ko/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ko/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ko/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ko/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ko/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
       <publishTime>04/20/2019 10:15:50</publishTime>
@@ -160,25 +160,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/23/2019 11:21:10</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.Common.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.DataVisualization.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.Design.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.ProcessingObjectModel.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.WebDesign.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.WinForms.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.ScriptManager.MSAjax.dll">
       <publishTime>04/20/2019 10:15:50</publishTime>
@@ -187,7 +187,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="bin/Microsoft.SqlServer.Types.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/Microsoft.VisualStudio.OLE.Interop.dll">
       <publishTime>03/23/2019 11:21:10</publishTime>
@@ -217,22 +217,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>04/20/2019 10:15:50</publishTime>
@@ -373,34 +373,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/SqlServerTypes/x64/msvcr120.dll">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="bin/SqlServerTypes/x64/SqlServerSpatial140.dll">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="bin/SqlServerTypes/x86/msvcr120.dll">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="bin/SqlServerTypes/x86/SqlServerSpatial140.dll">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>03/23/2019 11:21:10</publishTime>
@@ -424,40 +424,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="bin/zh-CHS/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHS/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHS/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHS/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHS/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHS/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHT/Microsoft.ReportViewer.Common.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHT/Microsoft.ReportViewer.DataVisualization.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHT/Microsoft.ReportViewer.Design.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHT/Microsoft.ReportViewer.WebDesign.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHT/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="bin/zh-CHT/Microsoft.ReportViewer.WinForms.resources.dll">
-      <publishTime>06/04/2019 17:44:53</publishTime>
+      <publishTime>04/06/2019 17:44:53</publishTime>
     </File>
     <File Include="Bundle.config">
       <publishTime>04/20/2019 10:15:50</publishTime>
@@ -496,7 +496,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>05/01/2019 18:08:02</publishTime>
+      <publishTime>06/05/2019 23:13:08</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>04/20/2019 10:15:50</publishTime>
@@ -535,25 +535,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="Forms/Index.aspx">
-      <publishTime>06/05/2019 03:18:19</publishTime>
+      <publishTime>05/06/2019 03:18:19</publishTime>
+    </File>
+    <File Include="Forms/InjuryProgress.aspx">
+      <publishTime>06/05/2019 23:28:49</publishTime>
     </File>
     <File Include="Forms/ListBody.aspx">
-      <publishTime>05/01/2019 14:12:48</publishTime>
+      <publishTime>01/05/2019 14:12:48</publishTime>
     </File>
     <File Include="Forms/ListInjuries.aspx">
-      <publishTime>06/05/2019 03:20:03</publishTime>
+      <publishTime>06/06/2019 00:11:02</publishTime>
     </File>
     <File Include="Forms/ListTreatments.aspx">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="Forms/Principal.Master">
-      <publishTime>06/05/2019 02:33:03</publishTime>
+      <publishTime>05/06/2019 02:33:03</publishTime>
     </File>
     <File Include="Forms/RecoverAccountForm.aspx">
-      <publishTime>06/05/2019 02:56:38</publishTime>
+      <publishTime>05/06/2019 02:56:38</publishTime>
     </File>
     <File Include="Forms/RegisterForm.aspx">
-      <publishTime>05/01/2019 18:58:22</publishTime>
+      <publishTime>01/05/2019 18:58:22</publishTime>
     </File>
     <File Include="Forms/Results.aspx">
       <publishTime>06/05/2019 00:41:27</publishTime>
@@ -565,13 +568,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="Forms/SearchUsers.aspx">
-      <publishTime>06/04/2019 18:38:01</publishTime>
+      <publishTime>04/06/2019 18:38:01</publishTime>
     </File>
     <File Include="Forms/Secondary.Master">
-      <publishTime>05/01/2019 18:04:56</publishTime>
+      <publishTime>01/05/2019 18:04:56</publishTime>
     </File>
     <File Include="Forms/UserInjuries.aspx">
-      <publishTime>06/05/2019 02:02:47</publishTime>
+      <publishTime>05/06/2019 02:02:47</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>04/20/2019 10:15:50</publishTime>
@@ -793,19 +796,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="SqlServerTypes/readme.htm">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="SqlServerTypes/x64/msvcr120.dll">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="SqlServerTypes/x64/SqlServerSpatial140.dll">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="SqlServerTypes/x86/msvcr120.dll">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="SqlServerTypes/x86/SqlServerSpatial140.dll">
-      <publishTime>06/04/2019 17:44:52</publishTime>
+      <publishTime>04/06/2019 17:44:52</publishTime>
     </File>
     <File Include="Styles/bootstrap-theme.css">
       <publishTime>04/20/2019 10:15:50</publishTime>
@@ -844,7 +847,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/20/2019 10:15:50</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/05/2019 03:25:48</publishTime>
+      <publishTime>06/06/2019 00:37:18</publishTime>
     </File>
   </ItemGroup>
 </Project>

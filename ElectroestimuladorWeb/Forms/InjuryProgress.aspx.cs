@@ -64,19 +64,16 @@ namespace ElectroestimuladorWeb.Forms
             UsersTreatments.InjuryId = Convert.ToInt32(axVarSes.Lee<string>("strInjuryId"));
             UsersTreatments.WaveId = Convert.ToInt32(axVarSes.Lee<string>("strWaveId"));
             UsersTreatments.TreatmentId = Convert.ToInt32(axVarSes.Lee<string>("strTreatmentId"));
-            //libtareaper.NumSecTar = Convert.ToInt64(axVarSes.Lee<string>("strEvento"));
-            //libtareaper.Ver();
-            //libpersona = new BD_TRS_Personas();
-            //libpersona.StrConexion = axVarSes.Lee<string>("strConexion");
-            //libpersona.NumSec = Convert.ToInt64(axVarSes.Lee<string>("strIndividuo"));
-            //libpersona.Ver();
-            //lblActividad.Text = libpersona.NombreCompleto.Trim();
+            gvDatos1.Columns[0].Visible = true;
+            gvDatos2.Columns[0].Visible = true;
             gvDatos1.Visible = true;
             gvDatos1.DataSource = UsersTreatments.SeeInjuryProgress();
             gvDatos1.DataBind();
             gvDatos2.Visible = true;
             gvDatos2.DataSource = UsersTreatments.SeeInjuryProgress();
             gvDatos2.DataBind();
+            gvDatos1.Columns[0].Visible = false;
+            gvDatos2.Columns[0].Visible = false;
         }
 
         private void CargarGrafico(string strTipoGrafico, DataTable dtDatos, DataTable dtParam)
@@ -136,9 +133,12 @@ namespace ElectroestimuladorWeb.Forms
                 Chart2.Titles[0].ShadowOffset = 0; // true
                 Chart2.Titles[0].ShadowColor = Color.Black;
 
-                Chart2.Titles.Add("Fecha: " + dtParam.Rows[0][5].ToString());//***********************************
+                Chart2.Titles.Add(axVarSes.Lee<string>("StrInjury"));
                 Chart2.Titles[1].Alignment = ContentAlignment.BottomCenter;
                 Chart2.Titles[1].Font = new Font("Arial", 10, FontStyle.Bold);
+                Chart2.Titles.Add(dtParam.Rows[0]["fecha"].ToString());
+                Chart2.Titles[2].Alignment = ContentAlignment.BottomCenter;
+                Chart2.Titles[2].Font = new Font("Arial", 10, FontStyle.Bold);
 
                 switch (strTipoGrafico)
                 {
@@ -259,9 +259,9 @@ namespace ElectroestimuladorWeb.Forms
             dtParam.Columns.Add("grafico", Type.GetType("System.String"));
             DataRow rwFila;
             rwFila = dtParam.NewRow();
-            rwFila["titulo"] = "Evolución";// libtarea.Nombre.Trim();
-            rwFila["subtitulo"] = "Lesion";// libtarea.Nombre.Trim();
-            rwFila["fecha"] = "fecha";// libOracleBD.Revisar_Fecha_Servidor();
+            rwFila["titulo"] = axVarSes.Lee<string>("strPerson");
+            rwFila["subtitulo"] = axVarSes.Lee<string>("strInjury");
+            rwFila["fecha"] = axVarSes.Lee<string>("strWave");
             rwFila["subtituloy"] = "Intensidad";
             rwFila["subtitulox"] = "Fecha";
             rwFila["nro_columnas"] = "1";
@@ -309,51 +309,12 @@ namespace ElectroestimuladorWeb.Forms
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("STRS_PROY_REP_Personas.aspx");
+            Response.Redirect("UserInjuries.aspx");
         }
-        protected void btnRechazar_Click(object sender, EventArgs e)
-        {
-            //libavance = new BD_TRS_Avances();
-            //libavance.StrConexion = axVarSes.Lee<string>("strConexion");
-            //libavance.NumSecTareaPer = Convert.ToInt64(axVarSes.Lee<string>("strTareaIndividuo"));
-            //tbAvanceAnterior.Text = libavance.ObtenerAvance().Trim();
-            //pnRechazo.Visible = true;
-        }
-        protected void btnGuardarAvanceEvento_Click(object sender, EventArgs e)
-        {
-            //libavance = new BD_TRS_Avances();
-            //libavance.StrConexion = axVarSes.Lee<string>("strConexion");
-            //libavance.NumSecTareaPer = Convert.ToInt16(axVarSes.Lee<string>("strTareaIndividuo"));
-            //libavance.PAvance = Convert.ToInt16(tbAvanceEvento.Text.Trim());
-            //libavance.Estado = 4; // dominio define como sin estado
-            //libavance.Observacion = tbObservacion.Text.Trim();
-
-            //    if (libavance.Insertar())
-            //    {
-            //        pnMensajeError.Visible = false;
-            //        pnMensajeOK.Visible = true;
-            //        lblMensajeOK.Text = "Avance Registrado";
-            //        pnRechazo.Visible = false;
-            //    }
-            //    else
-            //    {
-            //        pnMensajeError.Visible = true;
-            //        lblMensajeError.Text = "No se pudo guardar el dato." + libavance.Mensaje;
-            //    }
-
-        }
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            //pnRechazo.Visible = false;
-        }
+       
         protected void ibtnExportarExcel_Click(object sender, ImageClickEventArgs e)
         {
             ExportarExcel(gvDatos1);
-        }
-
-        protected void ddlTipoGrafico_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
         }
         protected void gvDatos_SelectedIndexChanged(object sender, EventArgs e)
         {
